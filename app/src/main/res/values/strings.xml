@@ -1,0 +1,31 @@
+<resources>
+    <!-- app name -->
+    <string name="app_name">Filme Streaming Service</string>
+
+    <!-- movie titles-->
+    <string name="movie1">INCEPTION</string>
+    <string name="movie2">THE DARK KNIGHT</string>
+    <string name="movie3">PULP FICTION</string>
+    <string name="movie4">HERR DER RINGE</string>
+    <string name="movie5">FIGHT CLUB</string>
+    <string name="movie6">HANGOVER</string>
+    <string name="movie7">FORREST GUMP</string>
+    <string name="movie8">ZURÜCK IN DIE ZUKUNFT</string>
+    <string name="movie9">AVATAR</string>
+    <string name="movie10">MATRIX</string>
+    <string name="movie11">KEVIN ALLEIN ZU HAUS</string>
+    <string name="movie12">FLUCH DER KARIBIK</string>
+    <string name="movie13">DER PATE</string>
+    <string name="movie14">KÖNIG DER LÖWEN</string>
+    <string name="movie15">STAR WARS</string>
+    <string name="movie16">ZOMBIELAND</string>
+    <string name="movie17">KILL BILL</string>
+    <string name="movie18">BUTTERFLY EFFECT</string>
+    <string name="movie19">I AM LEGEND</string>
+    <string name="movie20">INDIANA JONES</string>
+
+    <!-- UI -->
+    <string name="mark_as_favorite">Markiere diesen Film als Favorit</string>
+    <string name="movies">FILMTITEL</string>
+    <string name="account">Konto</string>
+</resources>
