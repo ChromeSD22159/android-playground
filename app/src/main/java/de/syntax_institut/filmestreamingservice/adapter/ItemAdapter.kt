@@ -18,13 +18,17 @@ class ItemAdapter(
     private val dataset: List<Movie>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    // der ViewHolder umfasst die View uns stellt einen Listeneintrag dar
+    /**
+     * der ViewHolder umfasst die View uns stellt einen Listeneintrag dar
+     */
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tv_itemMovieTitle)
         val imageView: ImageView = itemView.findViewById(R.id.iv_itemMovieImage)
     }
 
-    // hier werden neue ViewHolder erstellt
+    /**
+     * hier werden neue ViewHolder erstellt
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         // das itemLayout wird gebaut
@@ -35,14 +39,18 @@ class ItemAdapter(
         return ItemViewHolder(itemLayout)
     }
 
-    // hier findet der Recyclingprozess statt
-    // die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
+    /**
+     * hier findet der Recyclingprozess statt
+     * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
+     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.textView.text = context.resources.getString(dataset[position].stringResource)
         holder.imageView.setImageResource(dataset[position].imageResource)
     }
 
-    // damit der LayoutManager weiß, wie lang die Liste ist
+    /**
+     * damit der LayoutManager weiß, wie lang die Liste ist
+     */
     override fun getItemCount(): Int {
         return dataset.size
     }

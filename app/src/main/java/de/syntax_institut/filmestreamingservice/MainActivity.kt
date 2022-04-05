@@ -28,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         // recyclerView von Layout wird mit code verknüpft
         val recyclerView = binding.recyclerView
 
+        // recyclerView erhält einen passenden LayoutManager
+        recyclerView.layoutManager = GridLayoutManager(this,3)
+
         // ItemAdapter wird als Adapter festgelegt
         recyclerView.adapter = ItemAdapter(this, movieTitles)
 
