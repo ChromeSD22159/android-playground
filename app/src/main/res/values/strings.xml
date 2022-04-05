@@ -3,29 +3,42 @@
     <string name="app_name">Filme Streaming Service</string>
 
     <!-- movie titles-->
-    <string name="movie1">INCEPTION</string>
-    <string name="movie2">THE DARK KNIGHT</string>
-    <string name="movie3">PULP FICTION</string>
-    <string name="movie4">HERR DER RINGE</string>
-    <string name="movie5">FIGHT CLUB</string>
-    <string name="movie6">HANGOVER</string>
-    <string name="movie7">FORREST GUMP</string>
-    <string name="movie8">ZURÜCK IN DIE ZUKUNFT</string>
-    <string name="movie9">AVATAR</string>
-    <string name="movie10">MATRIX</string>
-    <string name="movie11">KEVIN ALLEIN ZU HAUS</string>
-    <string name="movie12">FLUCH DER KARIBIK</string>
-    <string name="movie13">DER PATE</string>
-    <string name="movie14">KÖNIG DER LÖWEN</string>
-    <string name="movie15">STAR WARS</string>
-    <string name="movie16">ZOMBIELAND</string>
-    <string name="movie17">KILL BILL</string>
-    <string name="movie18">BUTTERFLY EFFECT</string>
-    <string name="movie19">I AM LEGEND</string>
-    <string name="movie20">INDIANA JONES</string>
+    <string name="movieTitle1">INCEPTION</string>
+    <string name="movieTitle2">THE DARK KNIGHT</string>
+    <string name="movieTitle3">PULP FICTION</string>
+    <string name="movieTitle4">HERR DER RINGE</string>
+    <string name="movieTitle5">FIGHT CLUB</string>
+    <string name="movieTitle6">HANGOVER</string>
+    <string name="movieTitle7">FORREST GUMP</string>
+    <string name="movieTitle8">ZURÜCK IN DIE ZUKUNFT</string>
+    <string name="movieTitle9">AVATAR</string>
+    <string name="movieTitle10">MATRIX</string>
+    <string name="movieTitle11">KEVIN ALLEIN ZU HAUS</string>
+    <string name="movieTitle12">FLUCH DER KARIBIK</string>
+    <string name="movieTitle13">DER PATE</string>
+    <string name="movieTitle14">KÖNIG DER LÖWEN</string>
+    <string name="movieTitle15">STAR WARS</string>
+    <string name="movieTitle16">ZOMBIELAND</string>
+    <string name="movieTitle17">KILL BILL</string>
+    <string name="movieTitle18">BUTTERFLY EFFECT</string>
+    <string name="movieTitle19">I AM LEGEND</string>
+    <string name="movieTitle20">INDIANA JONES</string>
+    <string name="movieTitle21">HARRY POTTER</string>
+    <string name="movieTitle22">DER HOBBIT</string>
+    <string name="movieTitle23">BATMAN</string>
+    <string name="movieTitle24">BLACK WIDOW</string>
+    <string name="movieTitle25">TITANIC</string>
+    <string name="movieTitle26">SAN ANDREAS</string>
+    <string name="movieTitle27">IRON MAN</string>
+    <string name="movieTitle28">AFTER</string>
+    <string name="movieTitle29">READY PLAYER ONE</string>
+    <string name="movieTitle30">JOKER</string>
 
     <!-- UI -->
-    <string name="mark_as_favorite">Markiere diesen Film als Favorit</string>
-    <string name="movies">FILMTITEL</string>
+    <string name="movies">FILME</string>
+
+    <!-- Content Descriptions-->
     <string name="account">Konto</string>
+    <string name="movie">Film</string>
+    <string name="play">Abspielen</string>
 </resources>

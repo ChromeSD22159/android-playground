@@ -1,39 +1,60 @@
 package de.syntax_institut.filmestreamingservice.data
 
-import de.syntax_institut.filmestreamingservice.R
-import de.syntax_institut.filmestreamingservice.data.model.MovieTitle
+import android.content.Context
+import de.syntax_institut.filmestreamingservice.data.model.Movie
+import kotlin.random.Random
 
 /**
  * Diese Klasse bereitet Daten aus den Ressourcen auf
  */
-class Datasource {
+class Datasource(private val context: Context) {
+
+    private val nrOfImages = 14 // anpassen, wenn Anzahl an Bildern geändert wurde
+    private val nrOfTitles = 30 // anpassen, wenn Anzahl an Filmtiteln geändert wurde
 
     /**
-     * Diese Funktion holt die Filmtitel aus der string Quelldatei
-     * und liefert eine Liste aus Titlen zurück
+     * Diese Funktion holt die Titel & Bilder aus der Quelldatei
+     * und liefert eine Liste aus Filmen zurück
      */
-    fun loadTitles(): List<MovieTitle> {
-        return listOf(
-            MovieTitle(R.string.movie1),
-            MovieTitle(R.string.movie2),
-            MovieTitle(R.string.movie3),
-            MovieTitle(R.string.movie4),
-            MovieTitle(R.string.movie5),
-            MovieTitle(R.string.movie6),
-            MovieTitle(R.string.movie7),
-            MovieTitle(R.string.movie8),
-            MovieTitle(R.string.movie9),
-            MovieTitle(R.string.movie10),
-            MovieTitle(R.string.movie11),
-            MovieTitle(R.string.movie12),
-            MovieTitle(R.string.movie13),
-            MovieTitle(R.string.movie14),
-            MovieTitle(R.string.movie15),
-            MovieTitle(R.string.movie16),
-            MovieTitle(R.string.movie17),
-            MovieTitle(R.string.movie18),
-            MovieTitle(R.string.movie19),
-            MovieTitle(R.string.movie20)
+    fun loadMovies(): List<Movie> {
+        val movies = mutableListOf<Movie>()
+        for (i in 1..nrOfTitles) {
+            movies.add(
+                // Füge Movie Objekt hinzu
+                Movie(
+                    context.resources.getIdentifier(
+                        "movieTitle$i",
+                        "string",
+                        context.packageName
+                    ),
+                    randomImage()
+                )
+            )
+        }
+        return movies
+    }
+
+    // für randomImage
+    private var iPrevious = 0
+
+    /**
+     * Diese Funktion liefert ein zufälliges Bild aus der Bilderquelle
+     */
+    private fun randomImage(): Int {
+        var i: Int
+        // kein Bild soll zweimal hintereinander kommen
+        while (true) {
+            i = Random.nextInt(1, nrOfImages + 1)
+            if (iPrevious != i) {
+                iPrevious = i
+                break
+            }
+        }
+        // Liefere das entsprechende Bil aus der Quelle
+        return context.resources.getIdentifier(
+            "film_$i",
+            "drawable",
+            context.packageName
         )
     }
 }

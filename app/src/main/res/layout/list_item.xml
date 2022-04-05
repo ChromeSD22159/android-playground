@@ -1,42 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 
-    android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:layout_marginVertical="1dp"
+    android:id="@+id/item_cardView"
+    android:layout_width="115dp"
+    android:layout_height="175dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="5dp"
     android:alpha="0.85"
-    android:background="?attr/colorPrimaryVariant">
+    android:backgroundTint="?attr/colorPrimaryVariant">
 
-    <TextView
-        android:id="@+id/tv_itemMovieTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/movie8"
-        android:textColor="?attr/colorOnPrimary"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--
-        FÜR DIE ADVANCED AUFGABE:
+
+        <ImageView
+            android:id="@+id/iv_itemMovieImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="36dp"
+            android:src="@drawable/film_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/movie" />
+
+        <TextView
+            android:id="@+id/tv_itemMovieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="MOVIE TITLE PLACEHOLDER"
+            android:layout_marginHorizontal="4dp"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_itemMovieImage"
+            tools:ignore="HardcodedText" />
 
         <ImageButton
-            android:id="@+id/ib_like"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:padding="12dp"
+            android:id="@+id/ib_play"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:alpha="0.85"
             android:scaleType="fitCenter"
+            app:tint="?attr/colorOnPrimary"
             android:background="@color/SI_transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/iv_like"
-            android:contentDescription="@string/mark_as_favorite" />
-    -->
+            app:layout_constraintBottom_toBottomOf="@+id/iv_itemMovieImage"
+            app:layout_constraintEnd_toStartOf="@+id/iv_itemMovieImage"
+            app:layout_constraintStart_toEndOf="@+id/iv_itemMovieImage"
+            app:layout_constraintTop_toTopOf="@+id/iv_itemMovieImage"
+            app:srcCompat="@drawable/ic_play"
+            android:contentDescription="@string/play" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
