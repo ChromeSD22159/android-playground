@@ -17,14 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <ImageView
             android:id="@+id/iv_itemMovieImage"
-            android:layout_width="match_parent"
+            android:layout_width="125dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             android:layout_marginBottom="36dp"
-            android:src="@drawable/film_1"
+            android:src="@drawable/avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +61,6 @@
             app:layout_constraintTop_toTopOf="@+id/iv_itemMovieImage"
             app:srcCompat="@drawable/ic_play"
             android:contentDescription="@string/play" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

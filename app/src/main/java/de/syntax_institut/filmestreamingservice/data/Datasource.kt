@@ -1,15 +1,14 @@
 package de.syntax_institut.filmestreamingservice.data
 
 import android.content.Context
+import android.util.Log
 import de.syntax_institut.filmestreamingservice.data.model.Movie
-import kotlin.random.Random
 
 /**
  * Diese Klasse bereitet Daten aus den Ressourcen auf
  */
 class Datasource(private val context: Context) {
 
-    private val nrOfImages = 14 // anpassen, wenn Anzahl an Bildern geändert wurde
     private val numberOfTitles = 30 // anpassen, wenn Anzahl an Filmtiteln geändert wurde
 
     /**
@@ -25,7 +24,7 @@ class Datasource(private val context: Context) {
 
             // Hole den Titel und das Bild
             val title = getTitle(index)
-            val image = getImage()
+            val image = getImage(title)
 
             // Füge ein Movie Objekt hinzu
             movies.add(
@@ -48,23 +47,20 @@ class Datasource(private val context: Context) {
         )
     }
 
-    private var iPrevious = 0
     /**
-     * Diese Funktion liefert ein zufälliges Bild aus der Bilderquelle
+     * Diese Funktion liefert zu jedem übergebenen Titel das entsprechende Bild
      */
-    private fun getImage(): Int {
-        var i: Int
-        // kein Bild soll zweimal hintereinander kommen
-        while (true) {
-            i = Random.nextInt(1, nrOfImages + 1)
-            if (iPrevious != i) {
-                iPrevious = i
-                break
-            }
-        }
+    private fun getImage(titleRes: Int): Int {
+
+        // Hole den Titel aus den Ressourcen
+        val title = context.getString(titleRes).lowercase()
+            .replace(" ", "_")
+            .replace("ü", "_")
+            .replace("ö", "_")
+
         // Liefere das entsprechende Bild aus der Quelle
         return context.resources.getIdentifier(
-            "film_$i",
+            title,
             "drawable",
             context.packageName
         )
