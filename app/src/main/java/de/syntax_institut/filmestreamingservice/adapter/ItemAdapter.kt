@@ -23,7 +23,6 @@ class ItemAdapter(
      */
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tv_itemMovieTitle)
-        val imageView: ImageView = itemView.findViewById(R.id.iv_itemMovieImage)
     }
 
     /**
@@ -45,7 +44,6 @@ class ItemAdapter(
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.textView.text = context.resources.getString(dataset[position].stringResource)
-        holder.imageView.setImageResource(dataset[position].imageResource)
     }
 
     /**

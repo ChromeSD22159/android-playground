@@ -24,12 +24,11 @@ class Datasource(private val context: Context) {
 
             // Hole den Titel und das Bild
             val title = getTitle(index)
-            val image = getImage(title)
 
             // Füge ein Movie Objekt hinzu
             movies.add(
 
-                Movie(title, image)
+                Movie(title)
 
             )
         }
@@ -43,25 +42,6 @@ class Datasource(private val context: Context) {
         return context.resources.getIdentifier(
             "movieTitle$index",
             "string",
-            context.packageName
-        )
-    }
-
-    /**
-     * Diese Funktion liefert zu jedem übergebenen Titel das entsprechende Bild
-     */
-    private fun getImage(titleRes: Int): Int {
-
-        // Hole den Titel aus den Ressourcen
-        val title = context.getString(titleRes).lowercase()
-            .replace(" ", "_")
-            .replace("ü", "_")
-            .replace("ö", "_")
-
-        // Liefere das entsprechende Bild aus der Quelle
-        return context.resources.getIdentifier(
-            title,
-            "drawable",
             context.packageName
         )
     }
