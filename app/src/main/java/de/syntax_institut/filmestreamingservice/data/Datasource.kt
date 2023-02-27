@@ -28,7 +28,7 @@ class Datasource(private val context: Context) {
             // Füge ein Movie Objekt hinzu
             movies.add(
 
-                Movie(title)
+                Movie(title, false)
 
             )
         }

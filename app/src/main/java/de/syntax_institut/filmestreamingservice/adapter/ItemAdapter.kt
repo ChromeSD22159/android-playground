@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,8 @@ class ItemAdapter(
      */
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tv_itemMovieTitle)
+        val btnLike: ImageButton = itemView.findViewById(R.id.btnLike)
+
     }
 
     /**
@@ -44,8 +47,17 @@ class ItemAdapter(
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.textView.text = context.resources.getString(dataset[position].stringResource)
+        setLikeImage(position, holder)
+        holder.btnLike.setOnClickListener {
+            dataset[position].isFavorite = !dataset[position].isFavorite
+            setLikeImage(position, holder)
+        }
     }
 
+    private fun setLikeImage(position: Int, holder: ItemViewHolder){
+        holder.btnLike.setImageResource(
+            if (dataset[position].isFavorite) R.drawable.iv_like_liked else R.drawable.iv_like)
+    }
     /**
      * damit der LayoutManager weiß, wie lang die Liste ist
      */
