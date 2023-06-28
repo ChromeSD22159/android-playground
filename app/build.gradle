@@ -33,6 +33,7 @@ android {
     buildFeatures {
         dataBinding true
     }
+    namespace 'de.syntax_institut.filmestreamingservice'
 }
 
 dependencies {
