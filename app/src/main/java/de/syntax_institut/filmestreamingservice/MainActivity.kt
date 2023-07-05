@@ -2,8 +2,6 @@ package de.syntax_institut.filmestreamingservice
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.syntax_institut.filmestreamingservice.adapter.ItemAdapter
 import de.syntax_institut.filmestreamingservice.data.Datasource
@@ -19,11 +17,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Liste aus Filmtiteln wird von der Datasource geladen
-        val movieTitles = Datasource(this).loadMovies()
+        val movieTitles = Datasource().loadMovies()
 
         // recyclerView von Layout wird mit code verknüpft
         val recyclerView = binding.recyclerView
