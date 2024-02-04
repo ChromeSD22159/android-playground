@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">playgrrouond</string>
-    <string name="firstValue">TextViewFirstValue</string>
-    <string name="radiobuttonLeft">left</string>
-    <string name="radiobuttonCenter">center</string>
-    <string name="radiobuttonRight">right</string>
-    <string name="edittexthint">editTextHint</string>
-    <string name="action">action</string>
-    <string name="textview">TextView</string>
+    <string name="radiobuttonTextRed">Red</string>
+    <string name="radiobuttonTextGreen">Green</string>
+    <string name="radiobuttonTextBlue">right</string>
+    <string name="editTexthint">Please enter some text …</string>
+    <string name="buttonTextGenerate">Generate Output</string>
+    <string name="buttonTextReset">Reset</string>
+    <string name="textViewEnableEditText">Enable EditText</string>
+    <string name="textViewEnableRadioButtons">Enable RadioButtons</string>
+    <string name="textViewEnableButtons">Enable Buttons</string>
 </resources>
