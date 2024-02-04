@@ -53,19 +53,25 @@
                 android:id="@+id/radioButtonRed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radiobuttonTextRed" />
+                android:text="@string/radiobuttonTextRed"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButtonGreen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radiobuttonTextGreen" />
+                android:text="@string/radiobuttonTextGreen"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButtonBlue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/radiobuttonTextBlue" />
+                android:text="@string/radiobuttonTextBlue"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </RadioGroup>
     </LinearLayout>
 
@@ -207,8 +213,8 @@
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Ausgabe"
+            android:padding="16dp"
+            android:text="@string/textViewOutput"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
