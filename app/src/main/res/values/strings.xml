@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">playgrrouond</string>
+    <string name="firstValue">TextViewFirstValue</string>
+    <string name="radiobuttonLeft">left</string>
+    <string name="radiobuttonCenter">center</string>
+    <string name="radiobuttonRight">right</string>
+    <string name="edittexthint">editTextHint</string>
+    <string name="action">action</string>
+    <string name="textview">TextView</string>
 </resources>
