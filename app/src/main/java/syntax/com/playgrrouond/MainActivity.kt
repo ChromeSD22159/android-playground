@@ -3,6 +3,11 @@ package syntax.com.playgrrouond
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import androidx.core.view.allViews
+import androidx.core.view.iterator
 import syntax.com.playgrrouond.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         resetAllViews()
         setupAllViews()
+        disableAllViews()
     }
 
     private fun setupAllViews() {
@@ -42,31 +48,35 @@ class MainActivity : AppCompatActivity() {
                 binding.radioButtonRed.id -> setBackgroundToColor(Color.RED)
                 binding.radioButtonGreen.id -> setBackgroundToColor(Color.GREEN)
                 binding.radioButtonBlue.id -> setBackgroundToColor(Color.BLUE)
-                else -> setBackgroundToColor(Color.TRANSPARENT)
+                else -> setBackgroundToColor(Color.WHITE)
             }
         }
     }
 
     private fun setupSwitches() {
-        binding.switchEditText.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switchEditText.setOnCheckedChangeListener { _, isChecked ->
             binding.editTextText.isEnabled = isChecked
         }
-        binding.switchRadioButtons.setOnCheckedChangeListener { buttonView, isChecked ->
-            binding.radioButtonRed.isEnabled = isChecked
-            binding.radioButtonGreen.isEnabled = isChecked
-            binding.radioButtonBlue.isEnabled = isChecked
+        binding.switchRadioButtons.setOnCheckedChangeListener { _, isChecked ->
+            setRadioButtonsIsEnabledTo(isChecked)
+            if (!isChecked) {
+                resetRadioButtons()
+                setBackgroundToColor(Color.WHITE)
+            }
         }
-        binding.switchButton.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.switchButton.setOnCheckedChangeListener { _, isChecked ->
             binding.buttonGenerateText.isEnabled = isChecked
             binding.buttonReset.isEnabled = isChecked
         }
     }
 
     private fun resetAllViews() {
-        setBackgroundToColor(Color.TRANSPARENT)
-        setAllSwitchesTo(true)
+        setAllSwitchesTo(false)
+        setRadioButtonsIsEnabledTo(false)
+        setButtonsIsEnabledTo(false)
         resetTextViews()
-        setAllRadioButtonsTo(false)
+        resetRadioButtons()
+        setBackgroundToColor(Color.TRANSPARENT)
     }
 
     private fun setBackgroundToColor(color: Int) {
@@ -84,14 +94,31 @@ class MainActivity : AppCompatActivity() {
         binding.switchButton.isChecked = isChecked
     }
 
-    private fun setAllRadioButtonsTo(isChecked: Boolean) {
-        binding.radioButtonRed.isChecked = isChecked
-        binding.radioButtonGreen.isChecked = isChecked
-        binding.radioButtonBlue.isChecked = isChecked
+    private fun resetRadioButtons() {
+        binding.radioButtonRed.isChecked = false
+        binding.radioButtonGreen.isChecked = false
+        binding.radioButtonBlue.isChecked = false
+    }
+
+    private fun setRadioButtonsIsEnabledTo(isEnabled: Boolean) {
+        binding.radioButtonRed.isEnabled = isEnabled
+        binding.radioButtonGreen.isEnabled = isEnabled
+        binding.radioButtonBlue.isEnabled = isEnabled
     }
 
     private fun resetTextViews() {
-        binding.editTextText.setText("")
+        binding.editTextText.text.clear()
         binding.textViewResult.text = getString(R.string.textViewOutput)
+    }
+
+    private fun setButtonsIsEnabledTo(isEnabled: Boolean) {
+        binding.buttonGenerateText.isEnabled = isEnabled
+        binding.buttonReset.isEnabled = isEnabled
+    }
+
+    private fun disableAllViews() {
+        binding.switchEditText.isChecked = false
+        binding.switchRadioButtons.isChecked = false
+        binding.switchButton.isChecked = false
     }
 }
