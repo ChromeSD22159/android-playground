@@ -13,33 +13,69 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         resetAllViews()
+        setupAllViews()
+    }
+
+    private fun setupAllViews() {
         setupAllButtons()
+        setupRadioButtons()
+        setupSwitches()
     }
 
     private fun setupAllButtons() {
         binding.buttonGenerateText.setOnClickListener {
             val editTextEntry = binding.editTextText.text
-            binding.textViewResult.text = getString(R.string.textViewOutput) + "\n${editTextEntry}"
+            var result = getString(R.string.textViewOutput)
+            if (!editTextEntry.isBlank()) {
+                result = getString(R.string.textViewOutput) + "\n${editTextEntry}"
+            }
+            binding.textViewResult.text = result
         }
         binding.buttonReset.setOnClickListener {
             resetAllViews()
         }
     }
 
+    private fun setupRadioButtons() {
+        binding.radioButtonGroup.setOnCheckedChangeListener { _, checkedId ->
+            when(checkedId) {
+                binding.radioButtonRed.id -> setBackgroundToColor(Color.RED)
+                binding.radioButtonGreen.id -> setBackgroundToColor(Color.GREEN)
+                binding.radioButtonBlue.id -> setBackgroundToColor(Color.BLUE)
+                else -> setBackgroundToColor(Color.TRANSPARENT)
+            }
+        }
+    }
+
+    private fun setupSwitches() {
+        binding.switchEditText.setOnCheckedChangeListener { buttonView, isChecked ->
+            binding.editTextText.isEnabled = isChecked
+        }
+        binding.switchRadioButtons.setOnCheckedChangeListener { buttonView, isChecked ->
+            binding.radioButtonRed.isEnabled = isChecked
+            binding.radioButtonGreen.isEnabled = isChecked
+            binding.radioButtonBlue.isEnabled = isChecked
+        }
+        binding.switchButton.setOnCheckedChangeListener { buttonView, isChecked ->
+            binding.buttonGenerateText.isEnabled = isChecked
+            binding.buttonReset.isEnabled = isChecked
+        }
+    }
+
     private fun resetAllViews() {
-        setAllBackgroundColorToWhite()
+        setBackgroundToColor(Color.TRANSPARENT)
         setAllSwitchesTo(true)
         resetTextViews()
         setAllRadioButtonsTo(false)
     }
 
-    private fun setAllBackgroundColorToWhite() {
-        binding.root.setBackgroundColor(Color.WHITE)
-        binding.linearLayoutEditText.setBackgroundColor(Color.WHITE)
-        binding.linearLayoutRadioButtons.setBackgroundColor(Color.WHITE)
-        binding.linearLayoutSwitches.setBackgroundColor(Color.WHITE)
-        binding.linearLayoutButtons.setBackgroundColor(Color.WHITE)
-        binding.linearLayoutTextViewResult.setBackgroundColor(Color.WHITE)
+    private fun setBackgroundToColor(color: Int) {
+        binding.root.setBackgroundColor(color)
+        binding.linearLayoutEditText.setBackgroundColor(color)
+        binding.linearLayoutRadioButtons.setBackgroundColor(color)
+        binding.linearLayoutSwitches.setBackgroundColor(color)
+        binding.linearLayoutButtons.setBackgroundColor(color)
+        binding.linearLayoutTextViewResult.setBackgroundColor(color)
     }
 
     private fun setAllSwitchesTo(isChecked: Boolean) {
