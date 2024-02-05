@@ -56,6 +56,9 @@ class MainActivity : AppCompatActivity() {
     private fun setupSwitches() {
         binding.switchEditText.setOnCheckedChangeListener { _, isChecked ->
             binding.editTextText.isEnabled = isChecked
+            if(!isChecked) {
+                resetTextViews()
+            }
         }
         binding.switchRadioButtons.setOnCheckedChangeListener { _, isChecked ->
             setRadioButtonsIsEnabledTo(isChecked)
@@ -107,6 +110,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun resetTextViews() {
+        binding.editTextText.isEnabled = false
         binding.editTextText.text.clear()
         binding.textViewResult.text = getString(R.string.textViewOutput)
     }
