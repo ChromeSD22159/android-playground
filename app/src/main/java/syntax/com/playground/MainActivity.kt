@@ -1,4 +1,4 @@
-package syntax.com.playgrrouond
+package syntax.com.playground
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

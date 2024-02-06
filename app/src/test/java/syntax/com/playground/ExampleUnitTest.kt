@@ -1,4 +1,4 @@
-package syntax.com.playgrrouond
+package syntax.com.playground
 
 import org.junit.Test
 
