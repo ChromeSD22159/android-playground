@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "syntax.com.playgrrouond"
+    namespace = "syntax.com.playground"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "syntax.com.playgrrouond"
+        applicationId = "syntax.com.playground"
         minSdk = 34
         targetSdk = 34
         versionCode = 1

@@ -1,14 +1,9 @@
-package syntax.com.playgrrouond
+package syntax.com.playground
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import androidx.core.view.allViews
-import androidx.core.view.iterator
-import syntax.com.playgrrouond.databinding.ActivityMainBinding
+import syntax.com.playground.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
