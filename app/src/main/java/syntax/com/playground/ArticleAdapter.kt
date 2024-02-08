@@ -8,7 +8,7 @@ import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
 
 class ArticleAdapter(
-    val dataset: List<Article>
+    val articleList: List<Article>
 ): RecyclerView.Adapter<ViewHolder>() {
 
     private val shipType = 1
@@ -18,7 +18,7 @@ class ArticleAdapter(
     inner class CanItemViewHolder(val binding: ListCanItemBinding): ViewHolder(binding.root)
 
     override fun getItemViewType(position: Int): Int {
-        val article = dataset[position]
+        val article = articleList[position]
         return if(article.isShip) {
             shipType
         } else {
@@ -37,11 +37,11 @@ class ArticleAdapter(
     }
 
     override fun getItemCount(): Int {
-        return dataset.size
+        return articleList.size
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val article = dataset[position]
+        val article = articleList[position]
 
         if (holder is ShipItemViewHolder) {
             holder.binding.shipImage.setImageResource(article.image)

@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val articleList = DataSource().loadArticels()
-        binding.recyclerView.adapter = ArticleAdapter(this, articleList)
+        binding.recyclerView.adapter = ArticleAdapter(articleList)
     }
 }
