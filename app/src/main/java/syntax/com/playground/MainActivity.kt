@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val shipList = DataSource().loadShips()
-        binding.recyclerView.adapter = ShipAdapter(this, shipList)
+        val articleList = DataSource().loadArticels()
+        binding.recyclerView.adapter = ArticleAdapter(this, articleList)
     }
 }

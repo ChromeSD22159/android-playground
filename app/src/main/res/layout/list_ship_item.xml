@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/canImage"
+            android:id="@+id/shipImage"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:scaleType="centerInside"
@@ -24,7 +24,7 @@
             tools:src="@drawable/ship_01" />
 
         <TextView
-            android:id="@+id/canText"
+            android:id="@+id/shipText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -34,7 +34,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/canImage"
+            app:layout_constraintTop_toBottomOf="@id/shipImage"
             tools:text="ajsbdijabd aisubdiasbda siubdi sjdbfi sdib sdf s  dsiufbsdfijbsdij fsdij bfijsd fjsdbfijbsd f sdfuisdbfjibsd fsdbfisd fsdibfs dfjsd fijsdb fius dfbdsiubfisdjbfibsdf sdbfusdbfi sdifbsdif sduifb" />
 
         <TextView
