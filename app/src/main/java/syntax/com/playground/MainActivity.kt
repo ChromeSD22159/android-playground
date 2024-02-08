@@ -15,6 +15,5 @@ class MainActivity : AppCompatActivity() {
 
         val shipList = DataSource().loadShips()
         binding.recyclerView.adapter = ShipAdapter(this, shipList)
-
     }
 }
