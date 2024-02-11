@@ -48,6 +48,7 @@ class ArticleAdapter(
             holder.binding.shipText.text = article.text
         } else if (holder is CanItemViewHolder) {
             holder.binding.canImage.setImageResource(article.image)
+            holder.binding.canText.text = article.text
         }
     }
 }
