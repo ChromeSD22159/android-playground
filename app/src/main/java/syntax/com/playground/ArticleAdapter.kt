@@ -1,12 +1,17 @@
 package syntax.com.playground
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
+
+const val POSITION = "POSITION"
+const val IMAGEREF = "IMAGEREF"
+const val DESCRIPTION = "DESCRIPTION"
 
 class ArticleAdapter(
     val context: Context,
@@ -49,10 +54,27 @@ class ArticleAdapter(
             holder.binding.shipImage.setImageResource(article.image)
             holder.binding.shipText.text = article.text
             holder.binding.tvPosition.text = position.toString()
+
+            holder.binding.root.setOnClickListener {
+                val intent = Intent(context, ArticleDetailActivity::class.java)
+                intent.putExtra(POSITION, position)
+                intent.putExtra(IMAGEREF, article.image)
+                intent.putExtra(DESCRIPTION, article.text)
+                context.startActivity(intent)
+            }
+
         } else if (holder is CanItemViewHolder) {
             holder.binding.canImage.setImageResource(article.image)
             holder.binding.canText.text = article.text
             holder.binding.tvPosition.text = position.toString()
+
+            holder.binding.root.setOnClickListener {
+                val intent = Intent(context, ArticleDetailActivity::class.java)
+                intent.putExtra(POSITION, position)
+                intent.putExtra(IMAGEREF, article.image)
+                intent.putExtra(DESCRIPTION, article.text)
+                context.startActivity(intent)
+            }
         }
     }
 }
