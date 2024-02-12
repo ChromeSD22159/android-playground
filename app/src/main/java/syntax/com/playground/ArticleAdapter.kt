@@ -1,5 +1,6 @@
 package syntax.com.playground
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
 
 class ArticleAdapter(
+    val context: Context,
     val articleList: List<Article>
 ): RecyclerView.Adapter<ViewHolder>() {
 
@@ -46,9 +48,11 @@ class ArticleAdapter(
         if (holder is ShipItemViewHolder) {
             holder.binding.shipImage.setImageResource(article.image)
             holder.binding.shipText.text = article.text
+            holder.binding.tvPosition.text = position.toString()
         } else if (holder is CanItemViewHolder) {
             holder.binding.canImage.setImageResource(article.image)
             holder.binding.canText.text = article.text
+            holder.binding.tvPosition.text = position.toString()
         }
     }
 }
