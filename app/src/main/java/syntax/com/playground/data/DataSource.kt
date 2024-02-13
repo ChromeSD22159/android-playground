@@ -1,5 +1,7 @@
-package syntax.com.playground
+package syntax.com.playground.data
 
+import syntax.com.playground.data.model.Article
+import syntax.com.playground.R
 import kotlin.random.Random
 
 class DataSource {

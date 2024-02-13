@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/articleListFragment">
+
+    <fragment
+        android:id="@+id/articleListFragment"
+        android:name="syntax.com.playground.ui.ArticleListFragment"
+        android:label="ArticleListFragment" >
+        <action
+            android:id="@+id/action_articleListFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="syntax.com.playground.ui.ArticleDetailFragment"
+        android:label="fragment_article_detail"
+        tools:layout="@layout/fragment_article_detail" >
+        <action
+            android:id="@+id/action_articleDetailFragment_to_articleListFragment"
+            app:destination="@id/articleListFragment" />
+        <argument
+            android:name="IMAGEREF"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="POSITION"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="DESCRIPTION"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+</navigation>

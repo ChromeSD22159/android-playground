@@ -1,21 +1,22 @@
-package syntax.com.playground
+package syntax.com.playground.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
+import syntax.com.playground.ui.ArticleDetailFragmentDirections
+import syntax.com.playground.ui.ArticleListFragmentDirections
 
 const val POSITION = "POSITION"
 const val IMAGEREF = "IMAGEREF"
 const val DESCRIPTION = "DESCRIPTION"
 
 class ArticleAdapter(
-    val context: Context,
-    val articleList: List<Article>
+    private val articleList: List<Article>
 ): RecyclerView.Adapter<ViewHolder>() {
 
     private val shipType = 1
@@ -56,11 +57,10 @@ class ArticleAdapter(
             holder.binding.tvPosition.text = position.toString()
 
             holder.binding.root.setOnClickListener {
-                val intent = Intent(context, ArticleDetailActivity::class.java)
-                intent.putExtra(POSITION, position)
-                intent.putExtra(IMAGEREF, article.image)
-                intent.putExtra(DESCRIPTION, article.text)
-                context.startActivity(intent)
+                val imageRef = article.image
+                val position = position
+                val articleDescription = article.text
+                holder.itemView.findNavController().navigate(ArticleListFragmentDirections.actionArticleListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
             }
 
         } else if (holder is CanItemViewHolder) {
@@ -69,11 +69,10 @@ class ArticleAdapter(
             holder.binding.tvPosition.text = position.toString()
 
             holder.binding.root.setOnClickListener {
-                val intent = Intent(context, ArticleDetailActivity::class.java)
-                intent.putExtra(POSITION, position)
-                intent.putExtra(IMAGEREF, article.image)
-                intent.putExtra(DESCRIPTION, article.text)
-                context.startActivity(intent)
+                val imageRef = article.image
+                val position = position
+                val articleDescription = article.text
+                holder.itemView.findNavController().navigate(ArticleListFragmentDirections.actionArticleListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
             }
         }
     }

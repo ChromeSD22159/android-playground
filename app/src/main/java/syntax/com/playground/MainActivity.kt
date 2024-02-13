@@ -12,8 +12,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val articleList = DataSource().loadArticels(10000)
-        binding.recyclerView.adapter = ArticleAdapter(this, articleList)
     }
 }
