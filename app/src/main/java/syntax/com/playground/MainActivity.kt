@@ -16,5 +16,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val callback = object  : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                binding.fragmentContainerView.findNavController().navigateUp()
+            }
+        }
+        onBackPressedDispatcher.addCallback(callback)
     }
 }
