@@ -12,6 +12,7 @@ import syntax.com.playground.databinding.ArticleListFragmentBinding
 class ArticleListFragment: Fragment() {
 
     private lateinit var binding: ArticleListFragmentBinding
+    private val articleList = DataSource().loadArticels(10000)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,8 +24,6 @@ class ArticleListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val articleList = DataSource().loadArticels(10000)
         binding.recyclerView.adapter = ArticleAdapter(articleList)
     }
 }
