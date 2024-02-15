@@ -9,10 +9,9 @@ import syntax.com.playground.adapter.ArticleAdapter
 import syntax.com.playground.data.DataSource
 import syntax.com.playground.databinding.ArticleListFragmentBinding
 
-class ArticleListFragment: Fragment() {
-
+class CanListFragment: Fragment() {
     private lateinit var binding: ArticleListFragmentBinding
-    private val articleList = DataSource().loadArticels(10000)
+    private val canList = DataSource().loadCans(69679)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,6 +23,6 @@ class ArticleListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.adapter = ArticleAdapter(articleList)
+        binding.recyclerView.adapter = ArticleAdapter(canList)
     }
 }

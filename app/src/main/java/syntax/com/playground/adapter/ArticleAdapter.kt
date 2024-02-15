@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
-import syntax.com.playground.ui.ArticleDetailFragmentDirections
-import syntax.com.playground.ui.ArticleListFragmentDirections
+import syntax.com.playground.ui.CanListFragmentDirections
+import syntax.com.playground.ui.ShipListFragmentDirections
 
 const val POSITION = "POSITION"
 const val IMAGEREF = "IMAGEREF"
@@ -60,7 +60,13 @@ class ArticleAdapter(
                 val imageRef = article.image
                 val position = position
                 val articleDescription = article.text
-                holder.itemView.findNavController().navigate(ArticleListFragmentDirections.actionArticleListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
+                holder
+                    .itemView
+                    .findNavController()
+                    .navigate(
+                        ShipListFragmentDirections.actionShipListFragmentToArticleDetailFragment(
+                            imageRef,
+                            position, articleDescription))
             }
 
         } else if (holder is CanItemViewHolder) {
@@ -72,7 +78,7 @@ class ArticleAdapter(
                 val imageRef = article.image
                 val position = position
                 val articleDescription = article.text
-                holder.itemView.findNavController().navigate(ArticleListFragmentDirections.actionArticleListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
+                holder.itemView.findNavController().navigate(CanListFragmentDirections.actionCanListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
             }
         }
     }

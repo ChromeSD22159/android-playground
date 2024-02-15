@@ -17,6 +17,24 @@ class DataSource {
         return randomsArticles.shuffled()
     }
 
+    fun loadShips(count: Int = 100): List<Article> {
+        var randomsArticles = mutableListOf<Article>()
+        val allShips = listOfAllShips()
+        for (index in 0..count) {
+            randomsArticles.add(allShips[(0..allShips.size -1).random()])
+        }
+        return randomsArticles.shuffled()
+    }
+
+    fun loadCans(count: Int = 100): List<Article> {
+        var randomsArticles = mutableListOf<Article>()
+        val allCans = listOfAllCans()
+        for (index in 0..count) {
+            randomsArticles.add(allCans[(0..allCans.size -1).random()])
+        }
+        return randomsArticles.shuffled()
+    }
+
     private fun listOfAllShips(): List<Article> {
         return listOf(
             Article(R.drawable.ship_01, generateRandomIpsumWords(), true),

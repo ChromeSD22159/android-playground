@@ -5,4 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">HOME</string>
     <string name="share">SHARE</string>
+    <string name="ships">Ships</string>
+    <string name="cans">Cans</string>
+    <string name="warenkorb">WarenKorb</string>
 </resources>

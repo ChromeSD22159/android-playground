@@ -3,24 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/articleListFragment">
+    app:startDestination="@id/shipListFragment">
 
-    <fragment
-        android:id="@+id/articleListFragment"
-        android:name="syntax.com.playground.ui.ArticleListFragment"
-        android:label="ArticleListFragment" >
-        <action
-            android:id="@+id/action_articleListFragment_to_articleDetailFragment"
-            app:destination="@id/articleDetailFragment" />
-    </fragment>
     <fragment
         android:id="@+id/articleDetailFragment"
         android:name="syntax.com.playground.ui.ArticleDetailFragment"
         android:label="fragment_article_detail"
         tools:layout="@layout/fragment_article_detail" >
-        <action
-            android:id="@+id/action_articleDetailFragment_to_articleListFragment"
-            app:destination="@id/articleListFragment" />
         <argument
             android:name="IMAGEREF"
             app:argType="integer"
@@ -33,5 +22,27 @@
             android:name="DESCRIPTION"
             app:argType="string"
             android:defaultValue='""' />
+        <action
+            android:id="@+id/action_articleDetailFragment_to_shipListFragment"
+            app:destination="@id/shipListFragment" />
+        <action
+            android:id="@+id/action_articleDetailFragment_to_canListFragment"
+            app:destination="@id/canListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/canListFragment"
+        android:name="syntax.com.playground.ui.CanListFragment"
+        android:label="CanFragment" >
+        <action
+            android:id="@+id/action_canListFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shipListFragment"
+        android:name="syntax.com.playground.ui.ShipListFragment"
+        android:label="ShipListFragment" >
+        <action
+            android:id="@+id/action_shipListFragment_to_articleDetailFragment"
+            app:destination="@id/articleDetailFragment" />
     </fragment>
 </navigation>
