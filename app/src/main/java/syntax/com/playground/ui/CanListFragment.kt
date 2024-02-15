@@ -11,7 +11,7 @@ import syntax.com.playground.databinding.ArticleListFragmentBinding
 
 class CanListFragment: Fragment() {
     private lateinit var binding: ArticleListFragmentBinding
-    private val canList = DataSource().loadCans(69679)
+    private val canList = DataSource().loadCans(20)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

@@ -19,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        handleOnBackPressed()
+
+        val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        binding.bottomNAvigationView.setupWithNavController(navHost.navController)
+    }
+
+    private fun handleOnBackPressed() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 binding.fragmentContainerView.findNavController().navigateUp()

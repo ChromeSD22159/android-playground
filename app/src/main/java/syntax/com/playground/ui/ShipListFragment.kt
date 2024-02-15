@@ -12,7 +12,7 @@ import syntax.com.playground.databinding.ArticleListFragmentBinding
 class ShipListFragment: Fragment() {
 
     private lateinit var binding: ArticleListFragmentBinding
-    private val shipList = DataSource().loadShips(10000)
+    private val shipList = DataSource().loadShips(20)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
