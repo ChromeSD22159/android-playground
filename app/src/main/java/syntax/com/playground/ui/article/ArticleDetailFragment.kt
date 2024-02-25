@@ -1,4 +1,4 @@
-package syntax.com.playground.ui
+package syntax.com.playground.ui.article
 
 import android.os.Bundle
 import android.view.LayoutInflater

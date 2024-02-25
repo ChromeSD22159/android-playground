@@ -1,4 +1,4 @@
-package syntax.com.playground.ui
+package syntax.com.playground.ui.article
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,10 @@ import syntax.com.playground.adapter.ArticleAdapter
 import syntax.com.playground.data.DataSource
 import syntax.com.playground.databinding.ArticleListFragmentBinding
 
-class CanListFragment: Fragment() {
+class ShipListFragment: Fragment() {
+
     private lateinit var binding: ArticleListFragmentBinding
-    private val canList = DataSource().loadCans(20)
+    private val shipList = DataSource().loadShips(1000)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,6 +24,6 @@ class CanListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.adapter = ArticleAdapter(canList)
+        binding.recyclerView.adapter = ArticleAdapter(shipList)
     }
 }

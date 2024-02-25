@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/articleDetailFragment"
-        android:name="syntax.com.playground.ui.ArticleDetailFragment"
+        android:name="syntax.com.playground.ui.article.ArticleDetailFragment"
         android:label="fragment_article_detail"
         tools:layout="@layout/fragment_article_detail" >
         <argument
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/canListFragment"
-        android:name="syntax.com.playground.ui.CanListFragment"
+        android:name="syntax.com.playground.ui.article.CanListFragment"
         android:label="CanFragment" >
         <action
             android:id="@+id/action_canListFragment_to_articleDetailFragment"
@@ -39,10 +39,18 @@
     </fragment>
     <fragment
         android:id="@+id/shipListFragment"
-        android:name="syntax.com.playground.ui.ShipListFragment"
+        android:name="syntax.com.playground.ui.article.ShipListFragment"
         android:label="ShipListFragment" >
         <action
             android:id="@+id/action_shipListFragment_to_articleDetailFragment"
             app:destination="@id/articleDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="syntax.com.playground.ui.quiz.QuizFragment"
+        android:label="QuizFragment" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="syntax.com.playground.ui.quiz.ResultFragment"
+        android:label="ResultFragment" />
 </navigation>

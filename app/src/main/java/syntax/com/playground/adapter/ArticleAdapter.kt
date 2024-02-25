@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
-import syntax.com.playground.ui.CanListFragmentDirections
-import syntax.com.playground.ui.ShipListFragmentDirections
+import syntax.com.playground.ui.article.CanListFragmentDirections
+import syntax.com.playground.ui.article.ShipListFragmentDirections
 
 const val POSITION = "POSITION"
 const val IMAGEREF = "IMAGEREF"
@@ -76,7 +76,6 @@ class ArticleAdapter(
 
             holder.binding.root.setOnClickListener {
                 val imageRef = article.image
-                val position = position
                 val articleDescription = article.text
                 holder.itemView.findNavController().navigate(CanListFragmentDirections.actionCanListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
             }
