@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import syntax.com.playground.databinding.FragmentCounterBinding
 
-class CounterFragment : Fragment() {
+class ChapterFragment : Fragment() {
 
     private lateinit var vb: FragmentCounterBinding
-    private val viewModel: CounterViewModel by viewModels()
+    private val viewModel: ChapterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

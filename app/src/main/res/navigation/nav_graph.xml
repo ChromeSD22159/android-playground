@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/counterFragment"
-        android:name="syntax.com.playground.ui.counter.CounterFragment"
+        android:name="syntax.com.playground.ui.counter.ChapterFragment"
         android:label="fragment_counter"
-        tools:layout="@layout/fragment_counter" />
+        tools:layout="@layout/fragment_chapter" />
 </navigation>

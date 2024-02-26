@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import syntax.com.playground.data.Repository
 import syntax.com.playground.data.model.Chapter
 
-class CounterViewModel: ViewModel() {
+class ChapterViewModel: ViewModel() {
 
     private val repository = Repository()
     private val chapterList = repository.getChapterList(1000)
