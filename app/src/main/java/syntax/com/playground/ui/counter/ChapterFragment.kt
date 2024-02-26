@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import syntax.com.playground.databinding.FragmentCounterBinding
+import syntax.com.playground.databinding.FragmentChapterBinding
 
 class ChapterFragment : Fragment() {
 
-    private lateinit var vb: FragmentCounterBinding
+    private lateinit var vb: FragmentChapterBinding
     private val viewModel: ChapterViewModel by viewModels()
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class ChapterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        vb = FragmentCounterBinding.inflate(inflater, container, false)
+        vb = FragmentChapterBinding.inflate(inflater, container, false)
         return vb.root
     }
 

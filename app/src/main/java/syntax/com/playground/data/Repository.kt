@@ -5,6 +5,10 @@ import kotlin.random.Random
 
 class Repository {
 
+    fun getChapterList(count: Int = 100, isRandom: Boolean = true): List<Chapter> {
+        return if (isRandom) generateChapterList(count) else { hardCodedChapterList }
+    }
+
     private val hardCodedChapterList: List<Chapter> = listOf(
         Chapter(0, "lorem"),
         Chapter(1, "lorem ipsum"),
@@ -56,9 +60,5 @@ class Repository {
             chapterList.add(Chapter(index, generateRandomIpsumWords()))
         }
         return chapterList
-    }
-
-    fun getChapterList(count: Int = 100, isRandom: Boolean = true): List<Chapter> {
-        return if (isRandom) generateChapterList(count) else { hardCodedChapterList }
     }
 }
