@@ -58,7 +58,6 @@ class ArticleAdapter(
 
             holder.binding.root.setOnClickListener {
                 val imageRef = article.image
-                val position = position
                 val articleDescription = article.text
                 holder
                     .itemView

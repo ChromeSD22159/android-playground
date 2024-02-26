@@ -1,4 +1,4 @@
-package syntax.com.playground.ui.counter
+package syntax.com.playground.ui.chapter
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

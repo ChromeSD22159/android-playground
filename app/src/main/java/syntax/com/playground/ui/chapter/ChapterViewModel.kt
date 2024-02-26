@@ -1,4 +1,4 @@
-package syntax.com.playground.ui.counter
+package syntax.com.playground.ui.chapter
 
 import androidx.lifecycle.ViewModel
 import syntax.com.playground.data.Repository

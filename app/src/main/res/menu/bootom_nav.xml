@@ -4,8 +4,8 @@
         android:id="@+id/counterFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/counter"
-        android:title="@string/counter" />
+        android:icon="@drawable/chapter"
+        android:title="@string/chapter" />
     <item
         android:id="@+id/shipListFragment"
         android:layout_width="wrap_content"

@@ -5,25 +5,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import syntax.com.playground.adapter.ArticleAdapter
-import syntax.com.playground.data.DataSource
+import syntax.com.playground.data.Repository
 import syntax.com.playground.databinding.ArticleListFragmentBinding
 
 class ShipListFragment: Fragment() {
 
     private lateinit var binding: ArticleListFragmentBinding
-    private val shipList = DataSource().loadShips(1000)
+    private val viewModel: ArticleViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = ArticleListFragmentBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.adapter = ArticleAdapter(shipList)
+        binding.recyclerView.adapter = ArticleAdapter(viewModel.shipList)
     }
 }
