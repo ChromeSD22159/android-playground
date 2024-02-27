@@ -35,5 +35,6 @@ class ContactViewModel: ViewModel() {
 
     fun addNewContact(contact: Contact) {
         allContacts.add(contact)
+        _contacts.value = allContacts
     }
 }
