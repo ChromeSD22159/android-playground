@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import syntax.com.playground.adapter.ArticleAdapter
 import syntax.com.playground.databinding.ArticleListFragmentBinding
-import syntax.com.playground.ui.chapter.ChapterViewModel
 
 class CanListFragment: Fragment() {
     private lateinit var binding: ArticleListFragmentBinding
@@ -18,7 +17,7 @@ class CanListFragment: Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = ArticleListFragmentBinding.inflate(inflater)
         return binding.root
     }

@@ -5,7 +5,7 @@ import syntax.com.playground.data.model.Article
 import syntax.com.playground.data.model.Chapter
 import kotlin.random.Random
 
-class Repository {
+class LoremRepository {
 
     fun getChapterList(count: Int = 100, isRandom: Boolean = true): List<Chapter> {
         return if (isRandom) generateChapterList(count) else { hardCodedChapterList }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import syntax.com.playground.adapter.ArticleAdapter
-import syntax.com.playground.data.Repository
 import syntax.com.playground.databinding.ArticleListFragmentBinding
 
 class ShipListFragment: Fragment() {

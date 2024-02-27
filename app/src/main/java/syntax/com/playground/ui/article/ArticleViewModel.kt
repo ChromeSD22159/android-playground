@@ -1,12 +1,12 @@
 package syntax.com.playground.ui.article
 
 import androidx.lifecycle.ViewModel
-import syntax.com.playground.data.Repository
+import syntax.com.playground.data.LoremRepository
 
 class ArticleViewModel: ViewModel() {
 
-    private val repository = Repository()
+    private val loremRepository = LoremRepository()
 
-    val canList = repository.loadCans(10000)
-    val shipList = repository.loadShips(100000)
+    val canList = loremRepository.loadCans(10000)
+    val shipList = loremRepository.loadShips(100000)
 }

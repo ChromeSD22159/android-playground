@@ -1,13 +1,13 @@
 package syntax.com.playground.ui.chapter
 
 import androidx.lifecycle.ViewModel
-import syntax.com.playground.data.Repository
+import syntax.com.playground.data.LoremRepository
 import syntax.com.playground.data.model.Chapter
 
 class ChapterViewModel: ViewModel() {
 
-    private val repository = Repository()
-    private val chapterList = repository.getChapterList(1000)
+    private val loremRepository = LoremRepository()
+    private val chapterList = loremRepository.getChapterList(1000)
 
     private var _currentChapter = chapterList.first()
 

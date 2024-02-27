@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
@@ -17,13 +16,13 @@ const val DESCRIPTION = "DESCRIPTION"
 
 class ArticleAdapter(
     private val articleList: List<Article>
-): RecyclerView.Adapter<ViewHolder>() {
+): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val shipType = 1
     private val canType = 2
 
-    inner class ShipItemViewHolder(val binding: ListShipItemBinding): ViewHolder(binding.root)
-    inner class CanItemViewHolder(val binding: ListCanItemBinding): ViewHolder(binding.root)
+    inner class ShipItemViewHolder(val binding: ListShipItemBinding): RecyclerView.ViewHolder(binding.root)
+    inner class CanItemViewHolder(val binding: ListCanItemBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun getItemViewType(position: Int): Int {
         val article = articleList[position]
@@ -76,7 +75,14 @@ class ArticleAdapter(
             holder.binding.root.setOnClickListener {
                 val imageRef = article.image
                 val articleDescription = article.text
-                holder.itemView.findNavController().navigate(CanListFragmentDirections.actionCanListFragmentToArticleDetailFragment(imageRef, position, articleDescription))
+                holder
+                    .itemView
+                    .findNavController()
+                    .navigate(
+                        CanListFragmentDirections.actionCanListFragmentToArticleDetailFragment(
+                            imageRef,
+                            position,
+                            articleDescription))
             }
         }
     }
