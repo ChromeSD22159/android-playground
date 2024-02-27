@@ -2,7 +2,9 @@ package syntax.com.playground.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import syntax.com.playground.R
 import syntax.com.playground.data.model.Contact
 import syntax.com.playground.databinding.ItemContactBinding
 import syntax.com.playground.ui.contact.ContactViewModel
@@ -84,5 +86,11 @@ class ContactAdapter(
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         val contact = listOfContacts[position]
         holder.vb.tvContactName.text = contact.name
+
+        // OnClickListener setzt Kontakt im ViewModel && navigiert zum zum Detail Fragment
+        holder.vb.root.setOnClickListener {
+            contactViewModel.setSelectedContact(contact)
+            holder.itemView.findNavController().navigate(R.id.contactDetailFragment)
+        }
     }
 }

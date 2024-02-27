@@ -54,4 +54,8 @@
         android:id="@+id/contactsFragment"
         android:name="syntax.com.playground.ui.contact.ContactsFragment"
         android:label="ContactsFragment" />
+    <fragment
+        android:id="@+id/contactDetailFragment"
+        android:name="syntax.com.playground.ui.contact.ContactDetailFragment"
+        android:label="ContactDetailFragment" />
 </navigation>
