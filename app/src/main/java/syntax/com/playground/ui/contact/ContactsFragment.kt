@@ -29,21 +29,18 @@ class ContactsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Observer beobachtet die LiveData und reagiert sofort bei Veränderungen
         viewModel.contacts.observe(viewLifecycleOwner) {
             vb.rvContacts.adapter = ContactAdapter(it, viewModel)
         }
 
         vb.tietSearch.addTextChangedListener {
             viewModel.filterContacts(it.toString())
-
         }
 
         vb.btNew.setOnClickListener {
             val name = vb.tietNewContact.text.toString()
-            val newContact = Contact(name, "555-444-333")
+            val newContact = Contact(name, "555-444-666")
             viewModel.addNewContact(newContact)
-
             vb.tietNewContact.text?.clear()
         }
     }

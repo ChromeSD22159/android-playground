@@ -11,7 +11,6 @@ class ContactViewModel: ViewModel() {
     private val repository = ContactRepository()
     private val allContacts = repository.loadContacts()
 
-    // Private var - public val nur jetzt mit LiveData
     private var _contacts = MutableLiveData<MutableList<Contact>>(allContacts)
 
     val contacts: LiveData<MutableList<Contact>>
@@ -22,6 +21,8 @@ class ContactViewModel: ViewModel() {
     val selectedContact: LiveData<Contact>
         get() = _selectedContact
 
+    // Funktion um Kontakte zu filtern
+    // Überschreibt den Inhalt der LiveData
     fun filterContacts(input: String) {
         val filteredContacts = mutableListOf<Contact>()
 
@@ -33,8 +34,15 @@ class ContactViewModel: ViewModel() {
         _contacts.value = filteredContacts
     }
 
+    // Funktion um neuen Kontakt hinzuzufügen
+    // Danach wird auch hier der Inhalt der LiveData überschrieben
     fun addNewContact(contact: Contact) {
         allContacts.add(contact)
         _contacts.value = allContacts
+    }
+
+    // Funktion um ausgewählten Kontakt zu setzen
+    fun setSelectedContact(contact: Contact) {
+        _selectedContact.value = contact
     }
 }
