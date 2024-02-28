@@ -17,7 +17,7 @@ class ContactViewModel: ViewModel() {
         get() = _contacts
 
     // Live Data für ausgewählten Kontakt
-    private var _selectedContact = MutableLiveData<Contact>()
+    private var _selectedContact = MutableLiveData(allContacts.first())
     val selectedContact: LiveData<Contact>
         get() = _selectedContact
 
