@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import syntax.com.playground.adapter.ContactAdapter
 import syntax.com.playground.data.model.Contact
 import syntax.com.playground.databinding.FragmentContactsBinding
@@ -17,7 +18,7 @@ import syntax.com.playground.databinding.FragmentContactsBinding
 class ContactsFragment : Fragment() {
 
     private lateinit var vb: FragmentContactsBinding
-    private val viewModel: ContactViewModel by activityViewModels()
+    private val viewModel: ContactViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

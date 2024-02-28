@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import syntax.com.playground.R
 import syntax.com.playground.databinding.FragmentContactDetailBinding
 
 class ContactDetailFragment : Fragment() {
 
     private lateinit var vb: FragmentContactDetailBinding
-    private val viewModel: ContactViewModel by activityViewModels()
+    private val viewModel: ContactViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

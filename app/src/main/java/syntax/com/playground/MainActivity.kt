@@ -19,8 +19,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupBottomNavigation()
         handleOnBackPressed()
+    }
 
+    private fun setupBottomNavigation() {
         val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         binding.bottomNAvigationView.setupWithNavController(navHost.navController)
     }
