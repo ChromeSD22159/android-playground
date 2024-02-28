@@ -1,5 +1,6 @@
 package syntax.com.playground.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -89,6 +90,7 @@ class ContactAdapter(
 
         // OnClickListener setzt Kontakt im ViewModel && navigiert zum zum Detail Fragment
         holder.vb.root.setOnClickListener {
+            Log.e("ViewModel", "ContactAdapter contactViewModel: $contactViewModel")
             contactViewModel.setSelectedContact(contact)
             holder.itemView.findNavController().navigate(R.id.contactDetailFragment)
         }

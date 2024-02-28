@@ -18,7 +18,7 @@ import syntax.com.playground.databinding.FragmentContactsBinding
 class ContactsFragment : Fragment() {
 
     private lateinit var vb: FragmentContactsBinding
-    private val viewModel: ContactViewModel by viewModels()
+    private val viewModel: ContactViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

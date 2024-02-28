@@ -11,17 +11,15 @@ class ContactViewModel: ViewModel() {
     private val repository = ContactRepository()
     private val allContacts = repository.loadContacts()
 
-    private var _contacts = MutableLiveData<MutableList<Contact>>(allContacts)
+    private var _contacts = MutableLiveData(allContacts)
 
-    val contacts: LiveData<MutableList<Contact>>
-        get() = _contacts
+    val contacts: LiveData<MutableList<Contact>> = _contacts
 
     /**
      * Live Data für ausgewählten Kontakt
      */
-    private var _selectedContact = MutableLiveData<Contact>(allContacts.first())
-    val selectedContact: LiveData<Contact>
-        get() = _selectedContact
+    private var _selectedContact = MutableLiveData(allContacts.first())
+    val selectedContact: LiveData<Contact> = _selectedContact
 
     /**
      * Funktion um Kontakte zu filtern
