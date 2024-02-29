@@ -1,5 +1,6 @@
 package syntax.com.playground.ui.mvvm
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -33,10 +34,13 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        vb.rgSpanCount.setOnCheckedChangeListener { _, checkedId ->
+            Log.e("CHECKED_ID", "rgSpanCount checkedId:: ${checkedId}")
+            viewModel.updateLayout(checkedId)
+        }
 
         vb.rgLayout.setOnCheckedChangeListener { group, checkedId ->
-            group.checkedRadioButtonId
-            Log.e("CHECKEDID", "checkedId:: ${checkedId}")
+            Log.e("CHECKED_ID", "rgLayout checkedId:: ${checkedId}")
             viewModel.updateLayout(checkedId)
         }
     }
