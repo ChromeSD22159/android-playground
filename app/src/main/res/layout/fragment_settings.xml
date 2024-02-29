@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mvvm.SettingsFragment">
+
+
+    <RadioGroup
+        android:id="@+id/rg_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#BBDEFB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/linearlayout" />
+
+        <RadioButton
+            android:id="@+id/rb_grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gridlayout" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_span_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="#D1C4E9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_layout">
+
+        <RadioButton
+            android:id="@+id/rb_span_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spancount_1" />
+
+        <RadioButton
+            android:id="@+id/rb_span_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spancount_2" />
+
+        <RadioButton
+            android:id="@+id/rb_span_03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spancount_3" />
+
+        <RadioButton
+            android:id="@+id/rb_span_04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spancount_4" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
