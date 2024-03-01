@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import syntax.com.playground.R
 import syntax.com.playground.data.model.Contact
 import syntax.com.playground.databinding.ItemContactBinding
+import syntax.com.playground.ui.SharedViewModel
 import syntax.com.playground.ui.contact.ContactViewModel
 
 /**
@@ -18,7 +19,8 @@ import syntax.com.playground.ui.contact.ContactViewModel
  */
 class ContactAdapter(
     private val listOfContacts: List<Contact>,
-    private val contactViewModel: ContactViewModel
+    private val contactViewModel: ContactViewModel,
+    private val sharedViewModel: SharedViewModel
 ): RecyclerView.Adapter<ContactAdapter.ContactViewHolder>(){
 
     inner class ContactViewHolder(val vb: ItemContactBinding): RecyclerView.ViewHolder(vb.root)
@@ -88,7 +90,9 @@ class ContactAdapter(
         val contact = listOfContacts[position]
         holder.vb.tvContactName.text = contact.name
 
-        // OnClickListener setzt Kontakt im ViewModel && navigiert zum zum Detail Fragment
+        /**
+         * OnClickListener setzt Kontakt im ViewModel && navigiert zum zum Detail Fragment.
+         */
         holder.vb.root.setOnClickListener {
             Log.e("ViewModel", "ContactAdapter contactViewModel: $contactViewModel")
             contactViewModel.setSelectedContact(contact)

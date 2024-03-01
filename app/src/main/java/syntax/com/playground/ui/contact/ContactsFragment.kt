@@ -11,14 +11,18 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
+import syntax.com.playground.adapter.ArticleAdapter
 import syntax.com.playground.adapter.ContactAdapter
 import syntax.com.playground.data.model.Contact
 import syntax.com.playground.databinding.FragmentContactsBinding
+import syntax.com.playground.ui.SharedViewModel
 
 class ContactsFragment : Fragment() {
 
     private lateinit var vb: FragmentContactsBinding
     private val viewModel: ContactViewModel by activityViewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +37,7 @@ class ContactsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.contacts.observe(viewLifecycleOwner) {
-            vb.rvContacts.adapter = ContactAdapter(it, viewModel)
+            vb.rvContacts.adapter = ContactAdapter(it, viewModel, sharedViewModel)
         }
 
         vb.tietSearch.addTextChangedListener {

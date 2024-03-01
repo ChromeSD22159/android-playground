@@ -10,11 +10,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import syntax.com.playground.R
 import syntax.com.playground.databinding.FragmentContactDetailBinding
+import syntax.com.playground.ui.SharedViewModel
 
 class ContactDetailFragment : Fragment() {
 
     private lateinit var vb: FragmentContactDetailBinding
     private val viewModel: ContactViewModel by activityViewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -24,13 +24,13 @@
             android:id="@+id/rb_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/linearlayout" />
+            android:text="BLue"/>
 
         <RadioButton
             android:id="@+id/rb_grid_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gridlayout" />
+            android:text="green"/>
     </RadioGroup>
 
     <RadioGroup
@@ -49,25 +49,25 @@
             android:id="@+id/rb_span_01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/spancount_1" />
+            android:text=""/>
 
         <RadioButton
             android:id="@+id/rb_span_02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/spancount_2" />
+            android:text=""/>
 
         <RadioButton
             android:id="@+id/rb_span_03"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/spancount_3" />
+            android:text=""/>
 
         <RadioButton
             android:id="@+id/rb_span_04"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/spancount_4" />
+            android:text=""/>
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

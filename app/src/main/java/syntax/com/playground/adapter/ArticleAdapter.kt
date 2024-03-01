@@ -1,40 +1,42 @@
 package syntax.com.playground.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import syntax.com.playground.R
 import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
+import syntax.com.playground.ui.SharedViewModel
+import syntax.com.playground.ui.article.ArticleViewModel
 import syntax.com.playground.ui.article.CanListFragmentDirections
 import syntax.com.playground.ui.article.ShipListFragmentDirections
 
-const val POSITION = "POSITION"
-const val IMAGEREF = "IMAGEREF"
-const val DESCRIPTION = "DESCRIPTION"
+enum class ViewType(val value: Int) {
+    SHIP(1),
+    CAN(2)
+}
 
 class ArticleAdapter(
-    private val articleList: List<Article>
+    private val articleList: List<Article>,
+    private val viewModel: ArticleViewModel,
+    private val sharedViewModel: SharedViewModel
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val shipType = 1
-    private val canType = 2
 
     inner class ShipItemViewHolder(val binding: ListShipItemBinding): RecyclerView.ViewHolder(binding.root)
     inner class CanItemViewHolder(val binding: ListCanItemBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun getItemViewType(position: Int): Int {
-        val article = articleList[position]
-        return if(article.isShip) {
-            shipType
-        } else {
-            canType
+        return when (articleList[position].isShip) {
+            true -> ViewType.SHIP.value
+            false -> ViewType.CAN.value
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == shipType) {
+        return if (viewType == ViewType.SHIP.value) {
             val binding = ListShipItemBinding.inflate(LayoutInflater.from(parent.context))
             ShipItemViewHolder(binding)
         } else {
@@ -51,39 +53,49 @@ class ArticleAdapter(
         val article = articleList[position]
 
         if (holder is ShipItemViewHolder) {
-            holder.binding.shipImage.setImageResource(article.image)
-            holder.binding.shipText.text = article.text
-            holder.binding.tvPosition.text = position.toString()
-
-            holder.binding.root.setOnClickListener {
-                val imageRef = article.image
-                val articleDescription = article.text
-                holder
-                    .itemView
-                    .findNavController()
-                    .navigate(
-                        ShipListFragmentDirections.actionShipListFragmentToArticleDetailFragment(
-                            imageRef,
-                            position, articleDescription))
-            }
-
+            setupShipItem(holder.binding, article, position)
         } else if (holder is CanItemViewHolder) {
-            holder.binding.canImage.setImageResource(article.image)
-            holder.binding.canText.text = article.text
-            holder.binding.tvPosition.text = position.toString()
-
-            holder.binding.root.setOnClickListener {
-                val imageRef = article.image
-                val articleDescription = article.text
-                holder
-                    .itemView
-                    .findNavController()
-                    .navigate(
-                        CanListFragmentDirections.actionCanListFragmentToArticleDetailFragment(
-                            imageRef,
-                            position,
-                            articleDescription))
-            }
+            setupCanItem(holder.binding, article, position)
         }
+    }
+
+    private fun setupCanItem(
+        vb: ListCanItemBinding,
+        article: Article,
+        position: Int
+    ) {
+        vb.canImage.setImageResource(article.image)
+        vb.canText.text = article.text
+        vb.tvPosition.text = position.toString()
+
+        vb.root.setOnClickListener {
+            setViewModel(article, position)
+            navigate(it)
+        }
+    }
+
+    private fun setupShipItem(
+        vb: ListShipItemBinding,
+        article: Article,
+        position: Int
+    ) {
+        vb.shipImage.setImageResource(article.image)
+        vb.shipText.text = article.text
+        vb.tvPosition.text = position.toString()
+
+        vb.root.setOnClickListener {
+            setViewModel(article, position)
+            navigate(it)
+        }
+    }
+
+    private fun navigate(it: View) {
+        it.findNavController().navigate(R.id.articleDetailFragment)
+    }
+
+    private fun setViewModel(article: Article, position: Int) {
+        viewModel.setArticleDescription(article.text)
+        viewModel.setImageRef(article.image)
+        viewModel.setPosition(position)
     }
 }

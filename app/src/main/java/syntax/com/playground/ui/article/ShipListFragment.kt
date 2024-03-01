@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
 import syntax.com.playground.adapter.ArticleAdapter
 import syntax.com.playground.databinding.ArticleListFragmentBinding
+import syntax.com.playground.ui.SharedViewModel
 
 class ShipListFragment: Fragment() {
 
     private lateinit var binding: ArticleListFragmentBinding
-    private val viewModel: ArticleViewModel by viewModels()
+    private val viewModel: ArticleViewModel by activityViewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,6 +29,6 @@ class ShipListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.adapter = ArticleAdapter(viewModel.shipList)
+        binding.recyclerView.adapter = ArticleAdapter(viewModel.shipList, viewModel, sharedViewModel)
     }
 }
