@@ -1,18 +1,12 @@
 package syntax.com.playground.adapter
 
-import android.content.Context
-import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import syntax.com.playground.R
 import syntax.com.playground.data.model.Contact
-import syntax.com.playground.databinding.ItemContactBinding
-import syntax.com.playground.ui.settings.SettingsViewModel
+import syntax.com.playground.databinding.ListItemContactBinding
 import syntax.com.playground.ui.contact.ContactViewModel
 
 /**
@@ -23,11 +17,10 @@ import syntax.com.playground.ui.contact.ContactViewModel
  */
 class ContactAdapter(
     private val listOfContacts: List<Contact>,
-    private val contactViewModel: ContactViewModel,
-    private val settingsViewModel: SettingsViewModel
+    private val contactViewModel: ContactViewModel
 ): RecyclerView.Adapter<ContactAdapter.ContactViewHolder>(){
 
-    inner class ContactViewHolder(val vb: ItemContactBinding): RecyclerView.ViewHolder(vb.root)
+    inner class ContactViewHolder(val vb: ListItemContactBinding): RecyclerView.ViewHolder(vb.root)
 
     /**
      * Wird aufgerufen, wenn RecyclerView einen neuen [ViewHolder] des gegebenen Typs benötigt, um
@@ -54,7 +47,7 @@ class ContactAdapter(
      */
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
-        val vb = ItemContactBinding.inflate(LayoutInflater.from(parent.context))
+        val vb = ListItemContactBinding.inflate(LayoutInflater.from(parent.context))
         return ContactViewHolder(vb)
     }
 

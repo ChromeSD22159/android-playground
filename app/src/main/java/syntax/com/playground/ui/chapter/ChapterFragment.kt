@@ -17,7 +17,6 @@ class ChapterFragment : MainFragment() {
 
     private lateinit var vb: FragmentChapterBinding
     private val viewModel: ChapterViewModel by viewModels()
-    private val settingsViewModel: SettingsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

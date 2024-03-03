@@ -35,7 +35,7 @@ class ContactsFragment : MainFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.contacts.observe(viewLifecycleOwner) {
-            vb.rvContacts.adapter = ContactAdapter(it, viewModel, settingsViewModel)
+            vb.rvContacts.adapter = ContactAdapter(it, viewModel)
         }
 
         vb.tietSearch.addTextChangedListener {
