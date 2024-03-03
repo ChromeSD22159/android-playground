@@ -5,11 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mvvm.SettingsFragment">
-
+    tools:context=".ui.settings.SettingsFragment">
 
     <RadioGroup
-        android:id="@+id/rg_layout"
+        android:id="@+id/rg_backgroundColor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -21,53 +20,31 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/rb_linear_layout"
+            android:id="@+id/rb_red"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BLue"/>
+            android:background="#D81B60"
+            android:text="@string/red" />
 
         <RadioButton
-            android:id="@+id/rb_grid_layout"
+            android:id="@+id/rb_green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="green"/>
+            android:background="#A5D6A7"
+            android:text="@string/green" />
+
+        <RadioButton
+            android:id="@+id/rb_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D4FA"
+            android:text="@string/blue" />
+
+        <RadioButton
+            android:id="@+id/rb_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="@string/white" />
     </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/rg_span_count"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="#D1C4E9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_layout">
-
-        <RadioButton
-            android:id="@+id/rb_span_01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
-
-        <RadioButton
-            android:id="@+id/rb_span_02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
-
-        <RadioButton
-            android:id="@+id/rb_span_03"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
-
-        <RadioButton
-            android:id="@+id/rb_span_04"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
-    </RadioGroup>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

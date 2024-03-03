@@ -8,7 +8,9 @@ import syntax.com.playground.data.model.Contact
 
 class ContactViewModel: ViewModel() {
 
-    private var _contacts = MutableLiveData(ContactRepository().loadContacts())
+    private val repository = ContactRepository()
+    private val allContacts = repository.loadContacts()
+    private var _contacts = MutableLiveData(allContacts)
     val contacts: LiveData<MutableList<Contact>>
         get() = _contacts
 
@@ -24,7 +26,7 @@ class ContactViewModel: ViewModel() {
      * Überschreibt den Inhalt der LiveData
     */
     fun filterContacts(input: String) {
-        _contacts.value = _contacts.value!!.filter {
+        _contacts.value = allContacts.filter {
             it.name.lowercase().contains(input.lowercase())
         }.toMutableList()
     }

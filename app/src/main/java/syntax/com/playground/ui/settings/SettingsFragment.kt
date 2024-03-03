@@ -1,14 +1,15 @@
-package syntax.com.playground.ui.mvvm
+package syntax.com.playground.ui.settings
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import syntax.com.playground.MainFragment
+import syntax.com.playground.R
 import syntax.com.playground.databinding.FragmentSettingsBinding
-import syntax.com.playground.ui.SharedViewModel
 
 
 /**
@@ -16,10 +17,10 @@ import syntax.com.playground.ui.SharedViewModel
  * Use the [SettingsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SettingsFragment : Fragment() {
+class SettingsFragment : MainFragment() {
 
     private lateinit var vb: FragmentSettingsBinding
-    private val viewModel: SharedViewModel by activityViewModels()
+    private val viewModel: SettingsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,12 +34,18 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        vb.rgSpanCount.setOnCheckedChangeListener { group, checkedId ->
-           // viewModel.updateSpanCount(group.findViewById<RadioButton>(checkedId).tag.toString())
-        }
+        setupColorChangeListener()
+        setupRadioButtonsChangeListener()
+    }
 
-        vb.rgLayout.setOnCheckedChangeListener { group, checkedId ->
-            //viewModel.updateLayout(group.findViewById<RadioButton>(checkedId).tag.toString(), requireContext())
+    private fun setupRadioButtonsChangeListener() {
+        vb.rgBackgroundColor.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                vb.rbRed.id -> viewModel.setBackgroundColor(Color.RED)
+                vb.rbGreen.id -> viewModel.setBackgroundColor(Color.GREEN)
+                vb.rbBlue.id -> viewModel.setBackgroundColor(Color.BLUE)
+                vb.rbWhite.id -> viewModel.setBackgroundColor(Color.WHITE)
+            }
         }
     }
 }

@@ -1,14 +1,18 @@
 package syntax.com.playground.adapter
 
+import android.content.Context
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import syntax.com.playground.R
 import syntax.com.playground.data.model.Contact
 import syntax.com.playground.databinding.ItemContactBinding
-import syntax.com.playground.ui.SharedViewModel
+import syntax.com.playground.ui.settings.SettingsViewModel
 import syntax.com.playground.ui.contact.ContactViewModel
 
 /**
@@ -20,7 +24,7 @@ import syntax.com.playground.ui.contact.ContactViewModel
 class ContactAdapter(
     private val listOfContacts: List<Contact>,
     private val contactViewModel: ContactViewModel,
-    private val sharedViewModel: SharedViewModel
+    private val settingsViewModel: SettingsViewModel
 ): RecyclerView.Adapter<ContactAdapter.ContactViewHolder>(){
 
     inner class ContactViewHolder(val vb: ItemContactBinding): RecyclerView.ViewHolder(vb.root)
@@ -94,7 +98,6 @@ class ContactAdapter(
          * OnClickListener setzt Kontakt im ViewModel && navigiert zum zum Detail Fragment.
          */
         holder.vb.root.setOnClickListener {
-            Log.e("ViewModel", "ContactAdapter contactViewModel: $contactViewModel")
             contactViewModel.setSelectedContact(contact)
             holder.itemView.findNavController().navigate(R.id.contactDetailFragment)
         }

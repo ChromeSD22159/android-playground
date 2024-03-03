@@ -7,14 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import syntax.com.playground.MainFragment
+import syntax.com.playground.R
+import syntax.com.playground.data.model.Chapter
 import syntax.com.playground.databinding.FragmentChapterBinding
-import syntax.com.playground.ui.SharedViewModel
+import syntax.com.playground.ui.settings.SettingsViewModel
 
-class ChapterFragment : Fragment() {
+class ChapterFragment : MainFragment() {
 
     private lateinit var vb: FragmentChapterBinding
     private val viewModel: ChapterViewModel by viewModels()
-    private val sharedViewModel: SharedViewModel by activityViewModels()
+    private val settingsViewModel: SettingsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,15 +31,19 @@ class ChapterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        updateView()
+        viewModel.currentChapter.observe(viewLifecycleOwner) {
+            setAllTextViews(it)
+        }
 
-        vb.addBTN.setOnClickListener {
+        vb.btnNext.setOnClickListener {
             viewModel.nextChapter()
-            updateView()
+
         }
     }
 
-    private fun updateView() {
-        vb.counterTV.text = viewModel.currentChapter.chapterTitle
+    private fun setAllTextViews(chapter: Chapter) {
+        vb.tvContent.text = chapter.chapterTitle
+        vb.tvIndex.text = chapter.toString()
+        vb.tvMax.text = getString(R.string.max_index, viewModel.maxIndex.toString())
     }
 }

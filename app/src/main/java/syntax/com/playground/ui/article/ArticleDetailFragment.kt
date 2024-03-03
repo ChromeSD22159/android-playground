@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import syntax.com.playground.MainFragment
 import syntax.com.playground.databinding.FragmentArticleDetailBinding
 
 /**
@@ -15,10 +16,11 @@ import syntax.com.playground.databinding.FragmentArticleDetailBinding
  * Use the [ArticleDetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ArticleDetailFragment : Fragment() {
+class ArticleDetailFragment : MainFragment() {
 
     private lateinit var binding: FragmentArticleDetailBinding
     private val viewModel: ArticleViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +34,7 @@ class ArticleDetailFragment : Fragment() {
 
         binding.ivArticle.setImageResource(viewModel.imageRef)
         binding.tvPostion.text = viewModel.position.toString()
-        binding.tvArticleDetail.text= viewModel.articleDescription
+        binding.tvArticleDetail.text = viewModel.articleDescription
 
         binding.btHome.setOnClickListener {
             findNavController().navigateUp()

@@ -60,7 +60,7 @@
         android:label="ContactDetailFragment" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="syntax.com.playground.ui.mvvm.SettingsFragment"
+        android:name="syntax.com.playground.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

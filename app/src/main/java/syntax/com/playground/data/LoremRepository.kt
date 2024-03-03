@@ -65,14 +65,14 @@ class LoremRepository {
     }
 
     fun loadArticels(count: Int = 100): List<Article> {
-        var randomsArticles = mutableListOf<Article>()
+        var randomArticles = mutableListOf<Article>()
         val allCans = listOfAllCans()
         val allShips = listOfAllShips()
         for (index in 0..count) {
-            randomsArticles.add(allCans[(0..allCans.size -1).random()])
-            randomsArticles.add(allShips[(0..allShips.size -1).random()])
+            randomArticles.add(allCans[(0..allCans.size -1).random()])
+            randomArticles.add(allShips[(0..allShips.size -1).random()])
         }
-        return randomsArticles.shuffled()
+        return randomArticles.shuffled()
     }
 
     fun loadShips(count: Int = 100): List<Article> {

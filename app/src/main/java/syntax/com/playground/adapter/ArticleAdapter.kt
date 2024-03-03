@@ -9,10 +9,8 @@ import syntax.com.playground.R
 import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
-import syntax.com.playground.ui.SharedViewModel
+import syntax.com.playground.ui.settings.SettingsViewModel
 import syntax.com.playground.ui.article.ArticleViewModel
-import syntax.com.playground.ui.article.CanListFragmentDirections
-import syntax.com.playground.ui.article.ShipListFragmentDirections
 
 enum class ViewType(val value: Int) {
     SHIP(1),
@@ -22,7 +20,7 @@ enum class ViewType(val value: Int) {
 class ArticleAdapter(
     private val articleList: List<Article>,
     private val viewModel: ArticleViewModel,
-    private val sharedViewModel: SharedViewModel
+    private val settingsViewModel: SettingsViewModel
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ShipItemViewHolder(val binding: ListShipItemBinding): RecyclerView.ViewHolder(binding.root)
@@ -66,7 +64,7 @@ class ArticleAdapter(
     ) {
         vb.canImage.setImageResource(article.image)
         vb.canText.text = article.text
-        vb.tvPosition.text = position.toString()
+        vb.tvIndex.text = position.toString()
 
         vb.root.setOnClickListener {
             setViewModel(article, position)
@@ -81,7 +79,7 @@ class ArticleAdapter(
     ) {
         vb.shipImage.setImageResource(article.image)
         vb.shipText.text = article.text
-        vb.tvPosition.text = position.toString()
+        vb.tvIndex.text = position.toString()
 
         vb.root.setOnClickListener {
             setViewModel(article, position)

@@ -6,14 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import syntax.com.playground.MainFragment
 import syntax.com.playground.adapter.ArticleAdapter
 import syntax.com.playground.databinding.ArticleListFragmentBinding
-import syntax.com.playground.ui.SharedViewModel
+import syntax.com.playground.ui.settings.SettingsViewModel
 
-class CanListFragment: Fragment() {
+class CanListFragment: MainFragment() {
     private lateinit var binding: ArticleListFragmentBinding
     private val viewModel: ArticleViewModel by activityViewModels()
-    private val sharedViewModel: SharedViewModel by activityViewModels()
+    private val settingsViewModel: SettingsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +27,9 @@ class CanListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.adapter = ArticleAdapter(viewModel.canList, viewModel, sharedViewModel)
+        settingsViewModel.backgroundColor.observe(viewLifecycleOwner) { bgColor: Int ->
+            binding.root.setBackgroundColor(bgColor)
+            binding.recyclerView.adapter = ArticleAdapter(viewModel.canList, viewModel, settingsViewModel)
+        }
     }
 }
