@@ -11,6 +11,7 @@ class TimerViewModel: ViewModel() {
         get() = _timerValue
 
     private lateinit var timerJob: Job
+    private var delay = 1000L
 
 
     fun startTimer() {
