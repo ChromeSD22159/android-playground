@@ -9,42 +9,11 @@
         android:id="@+id/articleDetailFragment"
         android:name="syntax.com.playground.ui.article.ArticleDetailFragment"
         android:label="fragment_article_detail"
-        tools:layout="@layout/fragment_article_detail" >
-        <argument
-            android:name="IMAGEREF"
-            app:argType="integer"
-            android:defaultValue="0" />
-        <argument
-            android:name="POSITION"
-            app:argType="integer"
-            android:defaultValue="0" />
-        <argument
-            android:name="DESCRIPTION"
-            app:argType="string"
-            android:defaultValue='""' />
-        <action
-            android:id="@+id/action_articleDetailFragment_to_shipListFragment"
-            app:destination="@id/shipListFragment" />
-        <action
-            android:id="@+id/action_articleDetailFragment_to_canListFragment"
-            app:destination="@id/canListFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/canListFragment"
-        android:name="syntax.com.playground.ui.article.CanListFragment"
-        android:label="CanFragment" >
-        <action
-            android:id="@+id/action_canListFragment_to_articleDetailFragment"
-            app:destination="@id/articleDetailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_article_detail" />
     <fragment
         android:id="@+id/shipListFragment"
         android:name="syntax.com.playground.ui.article.ShipListFragment"
-        android:label="ShipListFragment" >
-        <action
-            android:id="@+id/action_shipListFragment_to_articleDetailFragment"
-            app:destination="@id/articleDetailFragment" />
-    </fragment>
+        android:label="ShipListFragment" />
     <fragment
         android:id="@+id/loremFragment"
         android:name="syntax.com.playground.ui.chapter.ChapterFragment"
@@ -63,4 +32,8 @@
         android:name="syntax.com.playground.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="syntax.com.playground.ui.threading.TimerFragment"
+        android:label="TimerFragment" />
 </navigation>

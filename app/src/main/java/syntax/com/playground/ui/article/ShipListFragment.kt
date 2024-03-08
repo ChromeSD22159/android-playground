@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import syntax.com.playground.MainFragment
 import syntax.com.playground.adapter.ArticleAdapter
@@ -30,7 +29,7 @@ class ShipListFragment: MainFragment() {
         super.onViewCreated(view, savedInstanceState)
         settingsViewModel.backgroundColor.observe(viewLifecycleOwner) { bgColor: Int ->
             binding.root.setBackgroundColor(bgColor)
-            binding.recyclerView.adapter = ArticleAdapter(viewModel.shipList, viewModel, settingsViewModel)
+            binding.recyclerView.adapter = ArticleAdapter(viewModel.shipList, viewModel)
         }
     }
 }

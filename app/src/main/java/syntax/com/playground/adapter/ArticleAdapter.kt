@@ -9,7 +9,6 @@ import syntax.com.playground.R
 import syntax.com.playground.data.model.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
-import syntax.com.playground.ui.settings.SettingsViewModel
 import syntax.com.playground.ui.article.ArticleViewModel
 
 enum class ViewType(val value: Int) {
@@ -20,7 +19,6 @@ enum class ViewType(val value: Int) {
 class ArticleAdapter(
     private val articleList: List<Article>,
     private val viewModel: ArticleViewModel,
-    private val settingsViewModel: SettingsViewModel
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ShipItemViewHolder(val binding: ListShipItemBinding): RecyclerView.ViewHolder(binding.root)

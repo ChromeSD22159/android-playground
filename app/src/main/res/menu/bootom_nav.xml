@@ -4,13 +4,13 @@
         android:id="@+id/contactsFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/contacts"
+        android:icon="@drawable/ic_contacts"
         android:title="@string/contacts" />
     <item
         android:id="@+id/loremFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/chapter"
+        android:icon="@drawable/ic_chapter"
         android:title="@string/chapter" />
     <item
         android:id="@+id/shipListFragment"
@@ -19,11 +19,11 @@
         android:icon="@drawable/nav_ship"
         android:title="@string/ships" />
     <item
-        android:id="@+id/canListFragment"
+        android:id="@+id/timerFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/nav_can"
-        android:title="@string/cans" />
+        android:icon="@drawable/ic_thread"
+        android:title="@string/threading" />
     <item
         android:id="@+id/settingsFragment"
         android:layout_width="wrap_content"

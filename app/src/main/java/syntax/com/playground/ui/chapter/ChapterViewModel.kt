@@ -9,8 +9,16 @@ import syntax.com.playground.data.model.Chapter
 class ChapterViewModel: ViewModel() {
 
     private val repo = LoremRepository()
-    private val chapterList = repo.getChapterList(1000)
+    private val chapterList = repo.getChapterList(5)
     val maxIndex = chapterList.size
+
+    private val _isNextButtonActive = MutableLiveData(true)
+    val isNextButtonActive: LiveData<Boolean>
+        get() = _isNextButtonActive
+
+    private val _isBackButtonActive = MutableLiveData(false)
+    val isBackButtonActive: LiveData<Boolean>
+        get() = _isBackButtonActive
 
     private val _currentChapter = MutableLiveData(chapterList.first())
     val currentChapter: LiveData<Chapter>
@@ -18,11 +26,23 @@ class ChapterViewModel: ViewModel() {
     private var currentIndex = _currentChapter.value!!.chapterNumber
 
     fun nextChapter() {
-        currentIndex = if (_currentChapter.value!!.chapterNumber + 1 < chapterList.size) {
-            _currentChapter.value!!.chapterNumber + 1
-        } else {
-            0
+        if (_currentChapter.value!!.chapterNumber + 1 <= chapterList.size) {
+            currentIndex++
         }
         _currentChapter.value = chapterList[currentIndex]
+        setButtonState()
+    }
+
+    fun previousChapter() {
+        if (_currentChapter.value!!.chapterNumber - 1 > 0) {
+            currentIndex--
+        }
+        _currentChapter.value = chapterList[currentIndex]
+        setButtonState()
+    }
+
+    private fun setButtonState() {
+        _isNextButtonActive.value = currentChapter.value!!.chapterNumber < chapterList.size
+        _isBackButtonActive.value = currentIndex != 0
     }
 }

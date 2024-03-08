@@ -12,29 +12,29 @@ class LoremRepository {
     }
 
     private val hardCodedChapterList: List<Chapter> = listOf(
-        Chapter(0, "lorem"),
-        Chapter(1, "lorem ipsum"),
-        Chapter(2, "lorem ipsum dolor"),
-        Chapter(3, "lorem ipsum dolor amet"),
-        Chapter(4, "lorem ipsum dolor amet consectetur"),
-        Chapter(5, "lorem ipsum dolor amet consectetur adipiscing"),
-        Chapter(6, "lorem ipsum dolor amet consectetur adipiscing elit"),
-        Chapter(7, "lorem ipsum dolor amet consectetur adipiscing elit sed"),
-        Chapter(8, "lorem ipsum dolor amet consectetur adipiscing elit sed do"),
-        Chapter(9, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod"),
-        Chapter(10, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor"),
-        Chapter(11, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt"),
-        Chapter(12, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut"),
-        Chapter(13, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore"),
-        Chapter(14, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et"),
-        Chapter(15, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore"),
-        Chapter(16, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna"),
-        Chapter(17, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"),
-        Chapter(18, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut"),
-        Chapter(19, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim"),
-        Chapter(20, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad"),
-        Chapter(21, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim"),
-        Chapter(22, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam")
+        Chapter(1, "lorem"),
+        Chapter(2, "lorem ipsum"),
+        Chapter(3, "lorem ipsum dolor"),
+        Chapter(4, "lorem ipsum dolor amet"),
+        Chapter(5, "lorem ipsum dolor amet consectetur"),
+        Chapter(6, "lorem ipsum dolor amet consectetur adipiscing"),
+        Chapter(7, "lorem ipsum dolor amet consectetur adipiscing elit"),
+        Chapter(8, "lorem ipsum dolor amet consectetur adipiscing elit sed"),
+        Chapter(9, "lorem ipsum dolor amet consectetur adipiscing elit sed do"),
+        Chapter(10, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod"),
+        Chapter(11, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor"),
+        Chapter(12, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt"),
+        Chapter(13, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut"),
+        Chapter(14, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore"),
+        Chapter(15, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et"),
+        Chapter(16, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore"),
+        Chapter(17, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna"),
+        Chapter(18, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"),
+        Chapter(19, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut"),
+        Chapter(20, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim"),
+        Chapter(21, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad"),
+        Chapter(22, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim"),
+        Chapter(23, "lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam")
     )
 
     private fun generateRandomIpsumWords(): String {
@@ -58,14 +58,14 @@ class LoremRepository {
     private fun generateChapterList(count: Int = 100): List<Chapter> {
         val chapterList = mutableListOf<Chapter>()
 
-        for (index in 0..count) {
+        for (index in 1..count) {
             chapterList.add(Chapter(index, generateRandomIpsumWords()))
         }
         return chapterList
     }
 
     fun loadArticels(count: Int = 100): List<Article> {
-        var randomArticles = mutableListOf<Article>()
+        val randomArticles = mutableListOf<Article>()
         val allCans = listOfAllCans()
         val allShips = listOfAllShips()
         for (index in 0..count) {
@@ -76,18 +76,18 @@ class LoremRepository {
     }
 
     fun loadShips(count: Int = 100): List<Article> {
-        var randomsArticles = mutableListOf<Article>()
+        val randomsArticles = mutableListOf<Article>()
         val allShips = listOfAllShips()
-        for (index in 0..count) {
+        for (index in 1..count) {
             randomsArticles.add(allShips[(0..allShips.size -1).random()])
         }
         return randomsArticles.shuffled()
     }
 
     fun loadCans(count: Int = 100): List<Article> {
-        var randomsArticles = mutableListOf<Article>()
+        val randomsArticles = mutableListOf<Article>()
         val allCans = listOfAllCans()
-        for (index in 0..count) {
+        for (index in 1..count) {
             randomsArticles.add(allCans[(0..allCans.size -1).random()])
         }
         return randomsArticles.shuffled()
