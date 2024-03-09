@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/timerFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_thread"
+        android:title="@string/threading" />
+    <item
         android:id="@+id/contactsFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,12 +24,6 @@
         android:layout_height="wrap_content"
         android:icon="@drawable/nav_ship"
         android:title="@string/ships" />
-    <item
-        android:id="@+id/timerFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/ic_thread"
-        android:title="@string/threading" />
     <item
         android:id="@+id/settingsFragment"
         android:layout_width="wrap_content"

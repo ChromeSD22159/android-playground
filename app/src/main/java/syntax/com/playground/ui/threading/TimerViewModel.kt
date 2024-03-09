@@ -10,8 +10,7 @@ class TimerViewModel: ViewModel() {
     val timerValue: LiveData<Long>
         get() = _timerValue
 
-    private lateinit var timerJob: Job
-    private var isTimerRunning = false
+    private var timerJob: Job? = null
     private var delay = 1000L
 
 
