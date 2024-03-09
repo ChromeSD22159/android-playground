@@ -40,12 +40,8 @@ class TimerFragment : MainFragment() {
             tvm.startTimer()
         }
 
-        vb.btPause.setOnClickListener {
-            tvm.pauseTimer()
-        }
-
-        vb.btReset.setOnClickListener {
-            tvm.resetTimer()
+        vb.btCancel.setOnClickListener {
+            tvm.stopTimer()
         }
 
         vb.btFaster.setOnClickListener {
