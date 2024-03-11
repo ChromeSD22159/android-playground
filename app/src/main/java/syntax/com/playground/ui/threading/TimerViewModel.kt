@@ -3,7 +3,10 @@ package syntax.com.playground.ui.threading
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class TimerViewModel: ViewModel() {
     private var _timerValue = MutableLiveData<Long>(0)
@@ -13,20 +16,32 @@ class TimerViewModel: ViewModel() {
     private var timerJob: Job? = null
     private var delay = 1000L
 
-
     fun startTimer() {
-        //TODO
+        if (timerJob == null) {
+
+            var counter = 0L
+            delay = 1000L
+
+            timerJob = viewModelScope.launch {
+                while (true) {
+                    delay(delay)
+                    counter ++
+                    _timerValue.postValue(counter)
+                }
+            }
+        }
     }
 
     fun stopTimer() {
-        //TODO
+        timerJob?.cancel()
+        timerJob = null
     }
 
     fun goFaster() {
-        //TODO
+        delay /=2
     }
 
     fun goSlower() {
-        //TODO
+        delay *=2
     }
 }
