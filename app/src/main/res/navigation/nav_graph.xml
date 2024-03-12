@@ -3,17 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/timerFragment">
+    app:startDestination="@id/randomMealFragment">
 
-    <fragment
-        android:id="@+id/articleDetailFragment"
-        android:name="syntax.com.playground.ui.article.ArticleDetailFragment"
-        android:label="fragment_article_detail"
-        tools:layout="@layout/fragment_article_detail" />
-    <fragment
-        android:id="@+id/shipListFragment"
-        android:name="syntax.com.playground.ui.article.ShipListFragment"
-        android:label="ShipListFragment" />
     <fragment
         android:id="@+id/loremFragment"
         android:name="syntax.com.playground.ui.chapter.ChapterFragment"
@@ -36,4 +27,12 @@
         android:id="@+id/timerFragment"
         android:name="syntax.com.playground.ui.threading.TimerFragment"
         android:label="TimerFragment" />
+    <fragment
+        android:id="@+id/randomMealFragment"
+        android:name="syntax.com.playground.ui.api.RandomMealFragment"
+        android:label="RandomMealFragment" />
+    <fragment
+        android:id="@+id/shipListFragment2"
+        android:name="syntax.com.playground.ui.article.ShipListFragment"
+        android:label="ShipListFragment" />
 </navigation>

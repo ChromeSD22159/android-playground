@@ -40,4 +40,5 @@
     <string name="reset">Reset</string>
     <string name="slower">Slower</string>
     <string name="meals">Meals</string>
+    <string name="api_random_meal">API Meal</string>
 </resources>

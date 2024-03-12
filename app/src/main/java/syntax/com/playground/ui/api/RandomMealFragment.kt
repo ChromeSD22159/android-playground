@@ -1,0 +1,41 @@
+package syntax.com.playground.ui.api
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import coil.load
+import syntax.com.playground.data.model.Meal
+import syntax.com.playground.databinding.FragmentRandomMealBinding
+
+class RandomMealFragment: Fragment() {
+
+    private lateinit var vb: FragmentRandomMealBinding
+    private val viewModel: RandomMealViewModel by activityViewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        vb = FragmentRandomMealBinding.inflate(inflater, container, false)
+        return vb.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.randomMeal.observe(viewLifecycleOwner) { mealObj: Meal ->
+            vb.tvMealTitle.text = mealObj.meal
+            vb.tvCountry.text = mealObj.area
+            vb.tvCategory.text = mealObj.category
+            vb.ivRandomMealImage.load(mealObj.image)
+        }
+
+        vb.btNext.setOnClickListener {
+            viewModel.laodRandomMeal()
+        }
+    }
+}

@@ -86,7 +86,7 @@ class ArticleAdapter(
     }
 
     private fun navigate(it: View) {
-        it.findNavController().navigate(R.id.articleDetailFragment)
+        it.findNavController().navigate(R.id.shipListFragment)
     }
 
     private fun setViewModel(article: Article, position: Int) {
