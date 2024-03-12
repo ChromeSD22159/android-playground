@@ -37,6 +37,9 @@ class RandomMealFragment: Fragment() {
          *
          * An dieser Stelle ist das aber erst noch nicht relevant.
          * Also Merke: VERBERGE die Komplexität!!!!!
+         *
+         * Weiter sind Kommentare NICHT zu-Empfehlen. Der Code soll
+         * selbst erklärend sein!!!!
          */
         addObservers()
         addClickListeners()
