@@ -32,7 +32,7 @@
         android:name="syntax.com.playground.ui.api.RandomMealFragment"
         android:label="RandomMealFragment" />
     <fragment
-        android:id="@+id/shipListFragment2"
+        android:id="@+id/shipListFragment"
         android:name="syntax.com.playground.ui.article.ShipListFragment"
         android:label="ShipListFragment" />
 </navigation>
