@@ -13,20 +13,17 @@ class RandomMealViewModel: ViewModel() {
      */
     private val repository = Repository(MealApi)
 
-    val randomMeal = repository.randomMeal
-
     /**
      * Referenz auf die LiveData aus dem Repository.
      */
-
-    /**
-     * Funktion die Laden der Daten im Repository in einer Coroutine startet.
-     */
-
+    val randomMeal = repository.randomMeal
     init {
         laodRandomMeal()
     }
 
+    /**
+     * Funktion die Laden der Daten im Repository in einer Coroutine startet.
+     */
     fun laodRandomMeal() {
         viewModelScope.launch {
           repository.getRandomMeal()

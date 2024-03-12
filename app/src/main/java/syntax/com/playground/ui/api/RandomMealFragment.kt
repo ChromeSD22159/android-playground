@@ -27,15 +27,33 @@ class RandomMealFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * Verberge die Komplexität in Funktionen.
+         * Funktionen sollten einen aussagekräftigen Namen haben.
+         * An dieser Stelle können wir den Vorgang im Quelltext nachvollziehen. Das heißt
+         * den Ablauf, Schritt für Schritt ablesen.
+         * Wenn wir an den konkreten Detail interesse haben, schauen wir uns die
+         * konkrete Implementierung der jeweilingen Funktion an.
+         *
+         * An dieser Stelle ist das aber erst noch nicht relevant.
+         * Also Merke: VERBERGE die Komplexität!!!!!
+         */
+        addObservers()
+        addClickListeners()
+    }
+
+    private fun addClickListeners() {
+        vb.btNext.setOnClickListener {
+            viewModel.laodRandomMeal()
+        }
+    }
+
+    private fun addObservers() {
         viewModel.randomMeal.observe(viewLifecycleOwner) { mealObj: Meal ->
             vb.tvMealTitle.text = mealObj.meal
             vb.tvCountry.text = mealObj.area
             vb.tvCategory.text = mealObj.category
             vb.ivRandomMealImage.load(mealObj.image)
-        }
-
-        vb.btNext.setOnClickListener {
-            viewModel.laodRandomMeal()
         }
     }
 }
