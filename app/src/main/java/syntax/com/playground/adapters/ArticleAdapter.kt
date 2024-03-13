@@ -1,4 +1,4 @@
-package syntax.com.playground.adapter
+package syntax.com.playground.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import syntax.com.playground.R
-import syntax.com.playground.data.model.Article
+import syntax.com.playground.data.model.article.Article
 import syntax.com.playground.databinding.ListCanItemBinding
 import syntax.com.playground.databinding.ListShipItemBinding
 import syntax.com.playground.ui.article.ArticleViewModel

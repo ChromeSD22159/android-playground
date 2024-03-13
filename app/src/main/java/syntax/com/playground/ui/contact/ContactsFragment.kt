@@ -1,18 +1,14 @@
 package syntax.com.playground.ui.contact
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import syntax.com.playground.MainFragment
-import syntax.com.playground.adapter.ContactAdapter
-import syntax.com.playground.data.model.Contact
+import syntax.com.playground.main.MainFragment
+import syntax.com.playground.adapters.ContactAdapter
+import syntax.com.playground.data.model.contact.Contact
 import syntax.com.playground.databinding.FragmentContactsBinding
 import syntax.com.playground.ui.settings.SettingsViewModel
 

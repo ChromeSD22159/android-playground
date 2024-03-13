@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import syntax.com.playground.MainFragment
-import syntax.com.playground.data.model.Chapter
+import syntax.com.playground.main.MainFragment
+import syntax.com.playground.data.model.chapter.Chapter
 import syntax.com.playground.databinding.FragmentChapterBinding
 
 class ChapterFragment : MainFragment() {

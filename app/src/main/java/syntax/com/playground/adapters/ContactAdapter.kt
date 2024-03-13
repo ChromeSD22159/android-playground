@@ -1,11 +1,11 @@
-package syntax.com.playground.adapter
+package syntax.com.playground.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import syntax.com.playground.R
-import syntax.com.playground.data.model.Contact
+import syntax.com.playground.data.model.contact.Contact
 import syntax.com.playground.databinding.ListItemContactBinding
 import syntax.com.playground.ui.contact.ContactViewModel
 

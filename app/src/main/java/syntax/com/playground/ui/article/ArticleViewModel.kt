@@ -2,7 +2,7 @@ package syntax.com.playground.ui.article
 
 import androidx.lifecycle.ViewModel
 import syntax.com.playground.R
-import syntax.com.playground.data.LoremRepository
+import syntax.com.playground.data.repo.LoremRepository
 
 class ArticleViewModel: ViewModel() {
 

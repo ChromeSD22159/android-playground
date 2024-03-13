@@ -1,4 +1,4 @@
-package syntax.com.playground.ui.api
+package syntax.com.playground.ui.meal
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
-import syntax.com.playground.data.model.Meal
+import syntax.com.playground.data.model.meal.Meal
 import syntax.com.playground.databinding.FragmentRandomMealBinding
 
 class RandomMealFragment: Fragment() {
 
     private lateinit var vb: FragmentRandomMealBinding
-    private val viewModel: RandomMealViewModel by activityViewModels()
+    private val viewModel: MealViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

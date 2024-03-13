@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import syntax.com.playground.MainFragment
-import syntax.com.playground.adapter.ArticleAdapter
+import syntax.com.playground.main.MainFragment
+import syntax.com.playground.adapters.ArticleAdapter
 import syntax.com.playground.databinding.ArticleListFragmentBinding
 import syntax.com.playground.ui.settings.SettingsViewModel
 

@@ -3,8 +3,8 @@ package syntax.com.playground.ui.contact
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import syntax.com.playground.data.ContactRepository
-import syntax.com.playground.data.model.Contact
+import syntax.com.playground.data.repo.ContactRepository
+import syntax.com.playground.data.model.contact.Contact
 
 class ContactViewModel: ViewModel() {
 

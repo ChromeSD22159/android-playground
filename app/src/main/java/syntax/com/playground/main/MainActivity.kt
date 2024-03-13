@@ -1,13 +1,13 @@
-package syntax.com.playground
+package syntax.com.playground.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import syntax.com.playground.R
 import syntax.com.playground.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

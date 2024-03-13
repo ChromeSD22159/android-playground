@@ -41,4 +41,8 @@
     <string name="slower">Slower</string>
     <string name="meals">Meals</string>
     <string name="api_random_meal">API Meal</string>
+    <string name="api_jokes">API Jokes</string>
+    <string name="menu">Menu</string>
+    <string name="random_meal">Meal ‽</string>
+    <string name="interrobang_punction_mark">‽</string>
 </resources>

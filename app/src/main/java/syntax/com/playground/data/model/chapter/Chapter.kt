@@ -1,4 +1,4 @@
-package syntax.com.playground.data.model
+package syntax.com.playground.data.model.chapter
 
 data class Chapter(
     val chapterNumber:Int,

@@ -1,4 +1,4 @@
-package syntax.com.playground
+package syntax.com.playground.main
 
 import android.os.Bundle
 import android.view.View

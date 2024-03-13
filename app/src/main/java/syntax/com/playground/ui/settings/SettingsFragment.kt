@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import syntax.com.playground.MainFragment
-import syntax.com.playground.R
+import syntax.com.playground.main.MainFragment
 import syntax.com.playground.databinding.FragmentSettingsBinding
 
 

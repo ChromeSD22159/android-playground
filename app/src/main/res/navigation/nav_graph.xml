@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/randomMealFragment">
+    app:startDestination="@id/mealCategoriesFragment">
 
     <fragment
         android:id="@+id/loremFragment"
@@ -29,10 +29,19 @@
         android:label="TimerFragment" />
     <fragment
         android:id="@+id/randomMealFragment"
-        android:name="syntax.com.playground.ui.api.RandomMealFragment"
+        android:name="syntax.com.playground.ui.meal.RandomMealFragment"
         android:label="RandomMealFragment" />
     <fragment
         android:id="@+id/shipListFragment"
         android:name="syntax.com.playground.ui.article.ShipListFragment"
         android:label="ShipListFragment" />
+    <fragment
+        android:id="@+id/mealCategoriesFragment"
+        android:name="syntax.com.playground.ui.meal.MealCategoriesFragment"
+        android:label="MealCategoriesFragment" />
+    <fragment
+        android:id="@+id/mealByCategoryFragment"
+        android:name="syntax.com.playground.ui.meal.MealByCategoryFragment"
+        android:label="fragment_meal_by_category"
+        tools:layout="@layout/fragment_meal_by_category" />
 </navigation>

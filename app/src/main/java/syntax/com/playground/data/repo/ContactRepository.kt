@@ -1,6 +1,6 @@
-package syntax.com.playground.data
+package syntax.com.playground.data.repo
 
-import syntax.com.playground.data.model.Contact
+import syntax.com.playground.data.model.contact.Contact
 
 class ContactRepository {
 

@@ -3,8 +3,8 @@ package syntax.com.playground.ui.chapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import syntax.com.playground.data.LoremRepository
-import syntax.com.playground.data.model.Chapter
+import syntax.com.playground.data.repo.LoremRepository
+import syntax.com.playground.data.model.chapter.Chapter
 
 class ChapterViewModel: ViewModel() {
 

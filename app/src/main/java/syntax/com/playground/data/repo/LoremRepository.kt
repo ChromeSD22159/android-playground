@@ -1,8 +1,8 @@
-package syntax.com.playground.data
+package syntax.com.playground.data.repo
 
 import syntax.com.playground.R
-import syntax.com.playground.data.model.Article
-import syntax.com.playground.data.model.Chapter
+import syntax.com.playground.data.model.article.Article
+import syntax.com.playground.data.model.chapter.Chapter
 import kotlin.random.Random
 
 class LoremRepository {

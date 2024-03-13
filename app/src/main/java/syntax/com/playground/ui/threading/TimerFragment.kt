@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import syntax.com.playground.MainFragment
+import syntax.com.playground.main.MainFragment
 import syntax.com.playground.databinding.FragmentTimerBinding
 
 class TimerFragment : MainFragment() {
