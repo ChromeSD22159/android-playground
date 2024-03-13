@@ -3,6 +3,7 @@ package syntax.com.playground.adapters
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -11,6 +12,7 @@ import syntax.com.playground.R
 import syntax.com.playground.data.model.meal.MealCategory
 import syntax.com.playground.data.repo.TAG
 import syntax.com.playground.databinding.ItemMealCategoryBinding
+import syntax.com.playground.ui.meal.MealCategoriesFragment
 import syntax.com.playground.ui.meal.MealViewModel
 
 class MealCategoryAdapter(
@@ -86,6 +88,7 @@ class MealCategoryAdapter(
 
         holder.vb.root.setOnClickListener {
             viewModel.loadMealsByCategory(mealCategory.name)
+            viewModel.setActionBarTitle(mealCategory.name)
             holder.itemView.findNavController().navigate(R.id.mealByCategoryFragment)
         }
     }

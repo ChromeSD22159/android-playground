@@ -1,10 +1,13 @@
 package syntax.com.playground.ui.meal
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import syntax.com.playground.data.repo.MealRepository
 import syntax.com.playground.data.remote.MealApi
+import syntax.com.playground.helpers.PGConstant
 
 class MealViewModel: ViewModel() {
 
@@ -21,6 +24,13 @@ class MealViewModel: ViewModel() {
     val allMealCategories = repository.mealCategories
 
     val mealsByCategory = repository.mealsByCat
+
+    /**
+     * LiveData für Fragmente.
+     */
+    private val _actionBarTitle = MutableLiveData(PGConstant.EMPTY_STRING.strValue)
+    val actionBarTitle: LiveData<String>
+        get() = _actionBarTitle
 
     init {
         laodRandomMeal()
@@ -46,5 +56,9 @@ class MealViewModel: ViewModel() {
         viewModelScope.launch {
             repository.getMealsByCat(category)
         }
+    }
+
+    fun setActionBarTitle(title: String) {
+        _actionBarTitle.value = title
     }
 }

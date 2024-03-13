@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import syntax.com.playground.adapters.MealCategoryAdapter
 import syntax.com.playground.databinding.FragmentMealCategoriesBinding
+import syntax.com.playground.main.MainActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -32,7 +33,7 @@ class MealCategoriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.allMealCategories.observe(viewLifecycleOwner) {
-            vb.rvMealCat.adapter = MealCategoryAdapter(it, viewModel)
+            vb.rvMealsByCat.adapter = MealCategoryAdapter(it, viewModel)
         }
     }
 }
