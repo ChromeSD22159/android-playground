@@ -5,11 +5,11 @@ import syntax.com.playground.helpers.PGConstant
 
 data class MealCategory(
     @Json(name = "idCategory")
-    val id: Int = 0,
+    val id: String,
     @Json(name = "strCategory")
-    val name: String = PGConstant.INTERROBANG_PUNCTION_MARK.strValue,
+    val name: String = PGConstant.ERROR_STR_DEBUG_MESSAGE.strValue,
     @Json(name = "strCategoryThumb")
-    val image: String = PGConstant.INTERROBANG_PUNCTION_MARK.strValue,
+    val image: String = PGConstant.ERROR_STR_DEBUG_MESSAGE.strValue,
     @Json(name = "strCategoryDescription")
-    val description: String = PGConstant.INTERROBANG_PUNCTION_MARK.strValue
+    val description: String = PGConstant.ERROR_STR_DEBUG_MESSAGE.strValue,
 )

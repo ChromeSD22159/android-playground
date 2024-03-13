@@ -3,7 +3,6 @@ package syntax.com.playground.adapters
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -82,8 +81,6 @@ class MealCategoryAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val mealCategory = mealCategorires[position]
 
-        Log.e(TAG, "MealCategory: ${mealCategory.name}")
-        Log.e(TAG, "MealCategory: ${mealCategory.description}")
         holder.vb.tvCategoryText.text = mealCategory.name
         holder.vb.ivCategoryImage.load(mealCategory.image)
 

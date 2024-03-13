@@ -25,7 +25,7 @@ class MealByCategoryAdapter(
     override fun onBindViewHolder(holder: MealByCatViewHolder, position: Int) {
         val meal = mealList[position]
 
-        holder.vb.tvMealByCatName.text = meal.meal
+        holder.vb.tvMealByCatName.text = meal.name
         holder.vb.ivMealByCat.load(meal.image)
     }
 

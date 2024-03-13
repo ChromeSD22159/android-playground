@@ -53,7 +53,7 @@ class RandomMealFragment: Fragment() {
 
     private fun addObservers() {
         viewModel.randomMeal.observe(viewLifecycleOwner) { mealObj: Meal ->
-            vb.tvMealTitle.text = mealObj.meal
+            vb.tvMealTitle.text = mealObj.name
             vb.tvCountry.text = mealObj.area
             vb.tvCategory.text = mealObj.category
             vb.ivRandomMealImage.load(mealObj.image)
