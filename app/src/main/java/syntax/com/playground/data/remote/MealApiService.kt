@@ -62,7 +62,7 @@ interface MealApiService {
      * Endpunkt für alle Meal Kategorien.
      */
     @GET("categories.php")
-    suspend fun getAllMealCategorires(): MealCategoryResult
+    suspend fun getAllMealCategories(): MealCategoryResult
 
     @GET("filter.php")
     suspend fun getMealsByCategory(@Query("c") category: String): MealResult

@@ -42,7 +42,7 @@ class MealRepository(private val apiService: MealApi) {
 
     suspend fun getAllMealCategories() {
         try {
-            val result = apiService.retrofitService.getAllMealCategorires()
+            val result = apiService.retrofitService.getAllMealCategories()
             _mealCategories.postValue(result.categories)
         } catch(e:Exception) {
             Log.e(TAG, "Error loading Data from API getAllMealCategories(): $e")

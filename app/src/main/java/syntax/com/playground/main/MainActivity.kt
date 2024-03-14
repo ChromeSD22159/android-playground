@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import syntax.com.playground.R
 import syntax.com.playground.databinding.ActivityMainBinding
 import syntax.com.playground.helpers.PGConstant
@@ -31,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomNavigation() {
         val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        binding.bottomNAvigationView.setupWithNavController(navHost.navController)
+        binding.bottomNavigationView.setupWithNavController(navHost.navController)
     }
 
     private fun handleOnBackPressed() {
